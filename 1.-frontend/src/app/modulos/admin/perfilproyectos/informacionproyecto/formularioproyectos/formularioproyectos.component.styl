@@ -1,0 +1,33 @@
+@import  '../../../../../../defaults.styl'
+.formualario-proyecto-admin
+    position relative
+    .boton-editar
+        position absolute
+        right 0
+        top -36px
+        a
+            background-color orange
+            span
+                font-size 14px
+                color white
+    .formulario
+        margin-top 40px
+        display flex
+        flex-direction column
+        justify-content center
+        .montos, .fechas, .ubicaciones, .extras, .contenido
+            display flex
+            flex-direction row
+            justify-content space-between
+            width 100%
+            mat-form-field
+                width 100%
+    .btn-guardar
+        display flex
+        justify-content center
+        align-items center
+        button
+            background-color #408c40
+            span
+                font-size 14px
+                color white

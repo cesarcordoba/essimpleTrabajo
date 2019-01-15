@@ -1,0 +1,61 @@
+
+@import  '../../../../../defaults.styl'
+ngx-slick
+	width 100%
+.slider-casos-exitos
+	height 625px
+	.slider
+		height 400px !important
+		display flex
+		align-items center
+		.carousel
+			height 400px
+			.slick-list
+				height 400px
+				.slick-track
+					height 400px
+					.slide
+						&:focus
+							outline 0px
+						.imagen-casos-exito
+							cursor pointer
+							width 617px
+							height 400px
+							img
+								width 100%
+								height 100%
+			button.slick-prev
+				left inherit !important
+				right 6%
+				top 110%
+				z-index 1
+				width 45px
+				height 45px
+				border 1px solid rgba(220,220,220,0.9)
+				&:before
+					font-family inherit
+					content '←'
+					font-size 45px
+					line-height 0.5
+					color #afafaf
+			button.slick-next
+				right inherit !important
+				left 94%
+				top 110%
+				width 45px
+				height 45px
+				border 1px solid rgba(220,220,220,0.9)
+				&:before
+					font-family inherit
+					content '→'
+					font-size 45px
+					line-height 0.5
+					color #afafaf
+
+	.titulo
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		.descripcion
+			width 70%

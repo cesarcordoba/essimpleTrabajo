@@ -1,0 +1,6 @@
+.slider-galeria
+    .slider(*ngIf="proyectos")
+        ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+            .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
+                .imagen-galeria
+                    img(src="{{proyecto?.portadas[1]?.link}}")

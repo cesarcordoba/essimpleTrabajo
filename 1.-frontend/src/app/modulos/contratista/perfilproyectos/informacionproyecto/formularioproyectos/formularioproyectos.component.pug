@@ -1,0 +1,56 @@
+.formualario-proyecto-contratista
+    .boton-editar
+        a(mat-button, (click)="editar()")
+            span(*ngIf="!valid") Cancelar
+            mat-icon(*ngIf="!valid") clear
+            span(*ngIf="valid") Editar
+            mat-icon(*ngIf="valid") edit
+    form.formulario(class="example-form")
+        mat-form-field
+            input(matInput, placeholder="Nombre", [(ngModel)]="proyecto.nombre",  name="nombre", [disabled]="valid")
+        mat-form-field
+            input(matInput, placeholder="Resumen", [(ngModel)]="proyecto.resumen",  name="resumen", [disabled]="valid")
+        .montos
+            mat-form-field
+                    input(matInput, placeholder="Meta Establecida", [(ngModel)]="proyecto.meta",  name="meta", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Acumulado", [(ngModel)]="proyecto.acumulado",  name="acumulado", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Monto minimo", [(ngModel)]="proyecto.minimo",  name="minimo", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Plazo estimado", [(ngModel)]="proyecto.plazo",  name="plazo", [disabled]="valid")
+        .fechas
+            mat-form-field(class="input-layout")
+                input(matInput, placeholder="Fecha de inicio:", [(ngModel)]="proyecto.fecha_inicio", [matDatepicker]="picker1", name="fecha_inicio", required, [disabled]="valid")
+                mat-datepicker-toggle(matSuffix [for]="picker1" )
+                mat-datepicker(#picker1)
+            mat-form-field(class="input-layout")
+                input(matInput, placeholder="Fecha de termino:", [(ngModel)]="proyecto.fecha_termino", [matDatepicker]="picker2", name="fecha_termino", required, [disabled]="valid")
+                mat-datepicker-toggle(matSuffix [for]="picker2" )
+                mat-datepicker(#picker2)
+            mat-form-field
+                input(matInput, placeholder="Status", [(ngModel)]="proyecto.status",  name="status", [disabled]="valid")
+        .ubicaciones
+            mat-form-field
+                input(matInput, placeholder="Ubicación", [(ngModel)]="proyecto.ubicacion",  name="ubicacion", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="URL Google Maps", [(ngModel)]="proyecto.url_ubicacion",  name="url_ubicacion", [disabled]="valid")
+        .extras
+            mat-form-field
+                input(matInput, placeholder="Rendimiento estimado", [(ngModel)]="proyecto.rendimiento",  name="rendimiento", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Retorno anual estimado", [(ngModel)]="proyecto.retorno",  name="retorno", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Tipo de participación", [(ngModel)]="proyecto.participacion",  name="participacion", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Pago de utilidades", [(ngModel)]="proyecto.pago_utilidades",  name="pago_utilidades", [disabled]="valid")
+        .contenido
+            mat-form-field(class="input-layout", *ngIf="!valid")
+                label Contenido:
+                textarea([froalaEditor]="options",
+                    [(froalaModel)]="proyecto.contenido",
+                    matInput name="Contenido",
+                    autocomplete="off" ,
+                    rows="4")
+    .btn-guardar
+        button(mat-raised-button (click)="aceptar()", *ngIf="!valid") Guardar Cambios

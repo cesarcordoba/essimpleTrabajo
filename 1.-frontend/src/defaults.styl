@@ -1,0 +1,115 @@
+.boxshadow
+	box-shadow 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)
+
+
+@font-face
+	font-family Poopins
+	font-weight 400
+	src url('/assets/fonts/Poppins-Bold.ttf')
+
+@font-face
+	font-family Poopins
+	font-weight 100
+	src url('/assets/fonts/Poppins-Light.ttf')
+
+
+@font-face
+	font-family Poopins
+	font-weight 200
+	src url('/assets/fonts/Poppins-Medium.ttf')
+
+@font-face
+	font-family Poopins
+	font-weight 300
+	src url('/assets/fonts/Poppins-SemiBold.ttf')
+
+@font-face
+	font-family Calibri
+	font-weight 400
+	src url('/assets/fonts/calibri/Calibri.ttf')
+
+@font-face
+	font-family Bold
+	src url('/assets/fonts/theboldfont.ttf')
+
+
+// @font-face
+// 	font-family Calibri
+// 	font-weight 800
+// 	src url('/assets/fonts/calibri/CALIBRIB.ttf')
+
+h1, h2, h3, h4
+	font-family Lato
+	font-weight 600
+
+p
+	font-family Lato
+	font-weight 100
+
+rojo1 = #cc0000
+rojo2 = #b20000
+rojo3 = #720000
+rojo4 = #8e0202
+
+gris = rgba(0,49,67,0.5)
+
+azul = #0b2347
+
+azul1 = #003143
+azul2 = #00384C
+azul3 = #00252d
+azul4 = #011a1e
+
+verde = #9c3
+
+amarillo = #f3edde
+
+// mobile = "(max-width: 1200px)"
+// compu = "(min-width: 1201px)"
+
+mobile = '(max-width: 768px)'
+tablet = '(min-width: 768px) and (max-width : 1000px)'
+mediana = '(min-width: 1000px) and (max-width : 1299px)'
+grande = '(min-width: 1300px)'
+
+.rojo
+	color rgb(244, 67, 54)
+
+.verde
+	color rgb(76, 175, 80)
+
+
+transition(duracion, delay)
+	-webkit-transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	transition all duracion cubic-bezier(0.445, 0.050, 0.550, 0.950)
+	-webkit-transition-delay delay ease-in-out
+	transition-delay delay ease-in-out
+
+
+mat-card.componente
+	margin 5px
+	border 3px solid azul
+	padding 3px
+
+
+.lineas
+	width 100%
+	position absolute
+	height 40px
+	background-color rojo1
+	display flex
+	overflow hidden
+	z-index 1
+	.linea
+		z-index 1
+		height 40px
+		width 100%
+		transform skew(-20deg)
+		&:first-child
+			background-color rojo1
+		&:nth-child(2)
+			background-color rojo2
+		&:nth-child(3)
+			background-color rojo3
+		&:last-child
+			background-color rojo4

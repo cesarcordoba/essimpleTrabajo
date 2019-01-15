@@ -1,0 +1,68 @@
+mat-card.formulario-contratista-complemento
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 Información Complementaria
+    .info-preview
+        .direccion
+            p Dirección: 
+            h4 {{ contratista?.direccion }}
+        .telefono
+            p Teléfono: 
+            h4 {{ contratista?.telefono }}
+        .paginaWeb
+            p Pagina Web: 
+            h4 {{ contratista?.paginaWeb }}
+        .numPromAnaualCasas
+            p Número promedio anual de casas:
+            h4 {{ contratista?.numPromAnaualCasas }}
+        .costoPromedio
+            p Costo promedio: 
+            h4 {{ contratista?.costoPromedio }}
+        .volumen
+            p Volumen: 
+            h4 {{ contratista?.volumen }}
+    //- form(class="example-form")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Dirección", [(ngModel)]="contratista.direccion",  name="direccion")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Telefono", [(ngModel)]="contratista.telefono",  name="telefono")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Pagina Web", [(ngModel)]="contratista.paginaWeb",  name="paginaWeb")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Número promedio anual de casas", [(ngModel)]="contratista.numPromAnaualCasas",  name="numPromAnaualCasas")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Costo promedio", [(ngModel)]="contratista.costoPromedio",  name="costoPromedio")
+    //-         mat-form-field
+    //-             input(matInput, placeholder="Volumen", [(ngModel)]="contratista.volumen",  name="volumen")
+    .arquitecto-container(*ngIf="arquitecto")
+        mat-toolbar
+            mat-toolbar-row(style="justify-content : space-between")
+                .titulo
+                    p Información del Arquitecto
+        .arquitecto-content
+            .volumen
+                p Cédula Profesional:
+                h4 {{arquitecto.cedula}}
+    .constructora-container(*ngIf="constructora")
+        mat-toolbar
+            mat-toolbar-row(style="justify-content : space-between")
+                .titulo
+                    p Información de la Constructora
+        .constructora-content
+            .nombreConstructora
+                p Nombre:
+                h4 {{constructora.nombreConstructora}}
+            .director
+                p Director:
+                h4 {{arquitecto.director}}
+            .direccion
+                p Direccion:
+                h4 {{arquitecto.direccion}}
+            .fecha_constitucion
+                p Fecha de constitución:
+                h4 {{arquitecto.fecha_constitucion}}
+            .rfc
+                p Cédula Profesional:
+                h4 {{arquitecto.rfc}}
+    //-button(mat-raised-button (click)="aceptar()") Aceptar

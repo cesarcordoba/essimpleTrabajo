@@ -1,0 +1,40 @@
+
+@import  '../../../../../defaults.styl'
+
+.autocomplete
+    display flex
+    flex-direction row
+    align-items center
+    justify-content center
+    .contenedor-buscador
+        width 100%
+    a
+        height 46px
+        background-color green
+        span
+            font-size 14px
+            color white
+    mat-form-field
+       background-color white
+       @extend .boxshadow
+
+    form, mat-form-field
+       height 46px
+       width 100%
+       .mat-form-field-wrapper
+           padding 0px !important
+           height 36px
+           .mat-form-field-flex
+               height 36px
+               width 100%
+               .mat-form-field-infix
+                   padding 0px
+                   margin 0px
+                   border 0px
+                   input
+                       height 36px
+                   // .mat-form-field-label-wrapper
+           .mat-form-field-underline
+               bottom 0px
+
+

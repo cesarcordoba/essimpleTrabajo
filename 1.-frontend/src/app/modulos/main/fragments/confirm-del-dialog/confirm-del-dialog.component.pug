@@ -1,0 +1,13 @@
+.iniciar-sesion-invertir(*ngIf="!usuario")
+    form(class="contenedor", (ngSubmit)="submit()" novalidate)
+        mat-dialog-content.contenido
+            h2 Debes iniciar sesion para invertir
+        mat-dialog-actions.botones
+            button.btn-iniciar(mat-button, type="button", (click)="cancel()") Cerrar
+.ya-invertir(*ngIf="usuario")
+    form(class="contenedor", (ngSubmit)="submit()" novalidate)
+        mat-dialog-content.contenido
+            h2 ¿Confirmar Inversion?
+        mat-dialog-actions.botones
+            button.btn-cancelar(mat-button, type="button", (click)="cancel()") Cancelar
+            button.btn-aceptar(mat-button, type="submit") Invertir

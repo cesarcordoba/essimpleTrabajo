@@ -1,0 +1,47 @@
+.ficha
+    .proyecto
+        .circulo-porcentaje
+            p {{value}}%
+        .ubicacion
+            h4 {{proyecto.nombre}}
+            mat-progress-bar(
+                class="example-margin",
+                [color]="color",
+                [mode]="mode",
+                [value]="value")
+        .portada
+            img(src="{{proyecto?.portadas[1]?.link}}")
+        .titulo
+            h3 {{proyecto.nombre}}
+        .texto-container
+            .texto-content
+                .meta
+                    .atributo
+                        p Meta:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.meta}}
+                .minimo
+                    .atributo
+                        p Minimo:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.minimo}}
+                .plazo
+                    .atributo
+                        p Plazo estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.plazo}}meses
+                .rendimiento
+                    .atributo
+                        p Rendimiento estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.rendimiento}}%
+                .retorno
+                    .atributo
+                        p Retorno anual estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.retorno}}%

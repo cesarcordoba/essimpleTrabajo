@@ -1,0 +1,10 @@
+section
+    .filtros-home
+        button(mat-button, (click)="filtrar(0)") Todos
+        button(mat-button, (click)="filtrar(1)") Vigentes
+        button(mat-button, (click)="filtrar(2)") Proximos
+        button(mat-button, (click)="filtrar(3)") Terminados
+    .barra
+    .proyectos
+        filtrosProyectos((mandarOuput)="recibir($event)")
+        gridProyectosMain([proyectos]="proyectos")

@@ -1,0 +1,21 @@
+.grid-container-admin
+    dropifyproyecto([multimedias]="proyecto.imagenes", [idProyecto]="proyecto.id")
+    .portada
+        h4 Imagen de portada
+        .imagen-portada(*ngIf="proyecto.portadas.length > 0")
+            img(src="{{proyecto?.portadas[0].link}}")
+            button(mat-icon-button, color="warn", (click)="mandarABorrarPortada(proyecto.portadas[0])", matTooltip="Eliminar")
+                mat-icon delete
+    mat-divider
+    .imagenes
+        h4 Imagenes del proyecto
+        mat-grid-list(
+            cols="{{columnas}}",
+            rowHeight="{{height}}",
+            *ngIf="proyecto.imagenes.length > 0"
+            )
+            mat-grid-tile(*ngFor="let imagen of proyecto.imagenes", [colspan]="colspan", [rowspan]="rowspan")
+                .imagen
+                    img([src]="imagen.link")
+                button(mat-icon-button, color="warn", (click)="borrar(imagen)", matTooltip="Eliminar")
+                    mat-icon delete

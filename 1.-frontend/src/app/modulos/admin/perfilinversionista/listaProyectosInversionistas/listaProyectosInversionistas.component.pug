@@ -1,0 +1,13 @@
+
+mat-card.lista-proyectos-inversionistas
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 Lista de proyectos en los que ha invertido 
+    mat-accordion(*ngFor="let proyecto of proyectos")
+        mat-expansion-panel
+            mat-expansion-panel-header
+                mat-panel-title
+                    h4 {{proyecto.nombre}}
+            .inversionista
+                p Monto Invertido: ${{proyecto.Inversionista.monto}}

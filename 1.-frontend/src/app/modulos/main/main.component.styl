@@ -1,0 +1,89 @@
+@import  '../../../defaults.styl'
+header
+    height 80px !important
+
+    mat-toolbar
+        height 80px
+        display flex
+        justify-content space-around
+        padding 0 10vw
+        .logo
+            display flex
+            justify-content center
+            align-items center
+            .logo-content
+                display flex
+                img
+                    height 63px
+                    width auto
+                h1
+                    color gray
+        .links
+            display flex
+            .menus
+                span
+                    font-size 15px
+                    font-weight 800
+                    color gray
+                    &:hover
+                        font-size 16px
+                        font-weight 800
+                        background -webkit-linear-gradient(#009A8C, #003B94)
+                        -webkit-background-clip text
+                        -webkit-text-fill-color transparent
+        .menu
+            display flex
+            height 40px
+            button
+                height 40px
+            .iniciar-sesion
+                width 115px
+                background-image linear-gradient(to right, #003B94 , #009A8C)
+                line-height 26px
+                span
+                    font-size 14px
+                    color white
+                    font-weight bold
+            .avatarbutton
+                .avatar-content
+                    display flex
+                    .avatar
+                        border-radius 40px
+                        overflow hidden
+                        height 36px
+                        width 36px
+                        background-position center
+                        background-size cover
+                        margin-right 5px
+    button
+        color gray
+
+
+footer
+    .footer
+        height 80px !important
+        background-image linear-gradient(to right, #003B94 , #009A8C) !important
+        display flex
+        flex-direction row
+        justify-content space-around
+        align-items center
+        .derechos, .contactos, .correo, .telefono
+            display flex
+            flex-direction row
+            justify-content center
+            align-items center
+        .derechos
+            p
+                margin 0
+                font-size 11px
+                color white
+                margin-top 20px
+        .contactos
+            height 40px
+            width 417px
+            justify-content space-between
+            .correo, .telefono
+                color white
+                p
+                    margin 0
+                    font-size 14px

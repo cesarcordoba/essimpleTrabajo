@@ -1,0 +1,57 @@
+div(layout="flex" style="justify-content : center")
+    md-card(flex="90")
+        h1 Bitacora Estelar
+        md-divider
+        md-table-container
+            table(md-table md-row-select multiple)
+                thead(md-head)
+                    tr(md-row)
+                        th(md-column) Version
+                        th(md-column) Capitan
+                        th(md-column) Fecha
+                        th(md-column) Aportaciones
+                        th(md-column) Comentario
+                    
+                tbody(md-body)
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.0
+                        td(md-cell) Ulises
+                        td(md-cell) 20 de noviembre del 2018
+                        td(md-cell) Se compartio el starconsole con la tripulación
+                        td(md-cell) Fue bien aceptado pero con algunas oportunidades de crecimiento
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.1
+                        td(md-cell) Ulises
+                        td(md-cell) 20 de noviembre del 2018
+                        td(md-cell) Se agrego la constelación de formulario
+                        td(md-cell) 
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.2
+                        td(md-cell) Malaganator3000
+                        td(md-cell) 26 de noviembre del 2018
+                        td(md-cell) Se agregó la constelacion imagenes
+                        td(md-cell) Esta constelación sirve para añadir imagenes a un planeta en calidad 400x400, 200x200, 100x100, 50x50. Las relación debera ser Planeta -> imagenesPlaneta.                
+                   tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.3
+                        td(md-cell) Ulises
+                        td(md-cell) 26 de noviembre del 2018
+                        td(md-cell) Corrección de las fichas
+                        td(md-cell) Se corrigió el archivo blackhole.js: linea 94 colum 86
+                   tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.4
+                        td(md-cell) Malaganator3000
+                        td(md-cell) 27 de noviembre del 2018
+                        td(md-cell) Creación de la constelación chit-autocomplete
+                        td(md-cell) 
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                         td(md-cell) 1.0.5
+                         td(md-cell) ulises
+                         td(md-cell) 29 de noviembre del 2018
+                         td(md-cell) Correciones a la fichas
+                         td(md-cell) Se cambio el template de donde se jalaba la ficha para que se sincronizara bien con los componentes
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.6
+                        td(md-cell) ulises
+                        td(md-cell) 29 de noviembre del 2018
+                        td(md-cell) Correciones de las relaciones
+                        td(md-cell) Se intercalaban las relaciones

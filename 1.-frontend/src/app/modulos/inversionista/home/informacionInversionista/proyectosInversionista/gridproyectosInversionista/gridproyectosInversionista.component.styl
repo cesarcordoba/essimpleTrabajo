@@ -1,0 +1,123 @@
+@import  '../../../../../../../defaults.styl'
+.grid-proyectos-inversionistas
+    mat-grid-tile
+        &:hover
+            cursor pointer
+    .proyecto
+        display flex
+        flex-direction row
+        justify-content center
+        align-items center
+        .portada-container
+            position relative
+            width 200px
+            height 180px
+            display flex
+            flex-direction row
+            .portada
+                width 200px
+                height 170px
+                img
+                    width 100%
+                    height 100%
+            .circulo-porcentaje
+                position absolute
+                border 3px solid #00838e
+                border-radius 40px
+                top 61px
+                right -16px
+                width 30px
+                height 30px
+                display flex
+                justify-content center
+                align-items center
+                background-color #fff
+                z-index 11
+                p
+                    font-size 12px
+                    margin 0
+                    font-weight bolder
+                    background -webkit-linear-gradient(#009A8C, #003B94)
+                    -webkit-background-clip text
+                    -webkit-text-fill-color transparent
+            .progreso
+                position absolute
+                z-index 10
+                -webkit-transform rotate(-90deg)
+                width 170px
+                top 83px
+                right -87px
+                display flex
+                flex-direction column
+                justify-content space-between
+                .mat-progress-bar
+                    .mat-progress-bar-fill 
+                        &::after 
+                            background-color #00838e
+                    .mat-progress-bar-buffer 
+                        background-color #dff3fd
+        .info-basica
+            padding 20px
+            .linea-division-proyectos
+                height 1px
+                width 100%
+                background-color gray 
+                opacity 0.4
+            h4, p, h3
+                margin 8px
+            h3
+                font-size 14px
+                margin 10px
+            h4
+                color gray
+                font-size 13px
+            p
+                color gray
+                opacity 0.8
+                text-align justify
+                font-size 12px
+    .cerrar-metricas
+        height 36px
+        position relative
+        background-image linear-gradient(to right, #003B94 , #009A8C)
+        .btn-cerrarMetricas
+            color white
+            position absolute
+            top 0
+            right 0
+    .metricas-container
+        display flex
+        flex-direction row
+        justify-content space-around
+        align-items center
+        margin-top 30px
+        .contenedor-izquierda
+            .porcentaje-acumulado
+                .mat-progress-spinner circle
+                    stroke #00838e !important 
+                h3
+                    margin 0
+                    font-size 16px
+            .pago-minimo
+                p
+                    margin-top 10px
+                    margin 0
+                    font-size 16px
+        .contenedor-centro
+            .fecha-transcurrida
+                .mat-progress-spinner circle
+                    stroke #003B94 !important
+            .fecha-numero
+                p
+                    margin-top 32px
+                    margin 0
+                    font-size 16px
+        .contenedor-derecha
+            .meta
+                h1
+                    margin 5px
+                    font-size 23px
+            .conseguido
+                h1
+                    font-size 16px
+                    margin 5px

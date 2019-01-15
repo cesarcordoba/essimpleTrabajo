@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+    api:
+        build: ./2.-backend
+        tty: true
+        volumes:
+            - ./backend/src:/usr/src/backend
+        command: npm run prod
+
+    cliente:
+        build: ./1.-frontend
+        tty: true
+        volumes:
+            - ./frontend/src:/usr/src/fronted
+        links:
+            - api
+        command: npm run server
+    
+    nginx:
+        build: ./nginx
+        tty: true
+        links:
+            - api
+            - cliente
+        ports:
+            - '8080:8080'
+
+                
+
+
+    

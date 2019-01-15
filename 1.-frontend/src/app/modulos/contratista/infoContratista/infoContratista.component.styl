@@ -1,0 +1,302 @@
+@import  '../../../../defaults.styl'
+.contratista-container
+    display flex
+    justify-content center
+    .contratista-content
+        display flex
+        flex-direction row
+        justify-content center
+        min-height 80vh
+        width 1300px
+        @media mediana
+            flex-direction column
+            width 1000px
+        @media tablet
+            flex-direction column
+            width 768px
+        @media mobile
+            flex-direction column
+            width 340px
+        .contenedor-izquierdo
+            width 50%
+            display flex
+            flex-direction column
+            align-items center
+            padding 10px
+            @media mediana
+                width 98%
+            @media tablet
+                width 98%
+            @media mobile
+                width 98%
+            .datos-usuario
+                width 100%
+                background-color white
+                border-radius 15px
+                border 1px solid rgba(190,190,190,04)
+                .barra-editar-ususario-contratista
+                    border-top-left-radius 15px
+                    border-top-right-radius 15px
+                    background-color #597cff
+                    position relative
+                    height 37px
+                    .titulo
+                        position absolute
+                        color #fff
+                        top 0
+                        left 0px
+                        display flex
+                        height 100%
+                        justify-content center
+                        align-items center
+                        padding 2px
+                        h3
+                            font-size 16px
+                            margin 0 
+                    .btn-usuario-editar
+                        position absolute
+                        color white
+                        top 0
+                        right 0
+                .usuario-contratista
+                    .antes-edicion
+                        padding 20px
+                        .nombre, .apellido, .correo
+                            display flex
+                            flex-direction row
+                            justify-content space-between
+                            align-items center
+                            height 30px
+                            h4, p
+                                margin 0
+                                font-size 18px
+                                @media mobile
+                                    font-size 15px
+                            p
+                                width 100%
+                                margin-left 10px
+                    .edicion
+                        padding 20px
+                        .fomulario-usuarios
+                            display flex
+                            justify-content center
+                            flex-direction column
+                        .contenedor-guardar-usuario
+                            .btn-guardar-usuario
+                                background-color #46ad46
+                                span
+                                    color white
+                                    font-size 14px
+                                    font-weight 800
+            .datos.contratista
+                margin-top 30px
+                width 100%
+                background-color white
+                border-radius 15px
+                border 1px solid rgba(190,190,190,04)
+                .barra-editar-contratista
+                    border-top-left-radius 15px
+                    border-top-right-radius 15px
+                    background-color #597cff
+                    position relative
+                    height 37px
+                    .titulo
+                        position absolute
+                        color #fff
+                        top 0
+                        left 0px
+                        display flex
+                        height 100%
+                        justify-content center
+                        align-items center
+                        padding 2px
+                        h3
+                            font-size 16px
+                            margin 0 
+                    .btn-contratista-editar
+                        position absolute
+                        color white
+                        top 0
+                        right 0
+                .contratista
+                    .antes-edicion
+                        padding 20px
+                        .direccion, .telefono, .pWeb,  .casasProm, .costoProm, .volumen
+                            display flex
+                            flex-direction row
+                            justify-content space-between
+                            align-items center
+                            height 30px
+                            h4, p
+                                margin 0
+                                font-size 18px
+                                @media mobile
+                                    font-size 15px
+                            p
+                                width 100%
+                                margin-left 10px
+                            h4
+                                width 190px
+                    .edicion
+                        padding 20px
+                        .formulario-contratistas
+                            display flex
+                            justify-content center
+                            flex-direction column
+                        .contenedor-guardar-contratista
+                            .btn-guardar-contratista
+                                background-color #46ad46
+                                span
+                                    color white
+                                    font-size 14px
+                                    font-weight 800
+        .contenedor-derecho
+            width 50%
+            display flex
+            flex-direction column
+            align-items center
+            padding 10px
+            @media mediana
+                width 98%
+            @media tablet
+                width 98%
+            @media mobile
+                width 98%
+            .foto-perfil
+                width 100%
+                background-color white
+                border-radius 15px
+                border 1px solid rgba(190,190,190,04)
+                .barra-editar-foto-contratista
+                    border-top-left-radius 15px
+                    border-top-right-radius 15px
+                    background-color #597cff
+                    position relative
+                    height 37px
+                    .btn-editar-foto
+                        position absolute
+                        color white
+                        top 0
+                        right 0
+                .foto-contratista
+                    display flex
+                    justify-content center
+                    align-items center
+                    .imagen-container
+                        .imagen
+                            width 200px
+                            height 200px
+                            border-radius 128px
+                            overflow hidden
+                            img
+                                width 100%
+                                height 100%
+                        h4
+                            margin 0
+                            font-size 18px
+                            text-align center
+                    .inputs
+                        padding 20px
+                        .btn-dropify
+                            background-color #46ad46
+                            margin-top 10px
+                            span
+                                color white
+                                font-size 14px
+                                font-weight 800
+            .datos-extras
+                margin-top 30px
+                width 100%
+                background-color white
+                border-radius 15px
+                border 1px solid rgba(190,190,190,04)
+                .barra-editar-extras
+                    border-top-left-radius 15px
+                    border-top-right-radius 15px
+                    background-color #597cff
+                    position relative
+                    height 37px
+                    .titulo
+                        position absolute
+                        color #fff
+                        top 0
+                        left 0px
+                        display flex
+                        height 100%
+                        justify-content center
+                        align-items center
+                        padding 2px
+                        h3
+                            font-size 16px
+                            margin 0                  
+                    .btn-editar-extras
+                        position absolute
+                        color white
+                        top 0
+                        right 0
+                .extras
+                    .arquitecto
+                        .antes-edicion
+                            padding 20px
+                            .info-arqui
+                                display flex
+                                flex-direction row
+                                justify-content space-between
+                                align-items center
+                                height 30px
+                                h4, p
+                                    margin 0
+                                    font-size 18px
+                                    @media mobile
+                                        font-size 15px
+                                p
+                                    width 100%
+                                    margin-left 10px
+                        .edicion
+                            padding 20px
+                            .formulario-arquitecto
+                                display flex
+                                justify-content center
+                                flex-direction column
+                            .contenedor-guardar-arquitecto
+                                .btn-guardar-arquitecto
+                                    background-color #46ad46
+                                    span
+                                        color white
+                                        font-size 14px
+                                        font-weight 800
+                    .constructora
+                        .antes-edicion
+                            padding 20px
+                            h4
+                                margin 0
+                                margin-bottom 10px
+                            .nombre, .director, .direccion, .fecha, .rfc
+                                display flex
+                                flex-direction row
+                                justify-content space-between
+                                align-items center
+                                height 30px
+                                h4, p
+                                    margin 0
+                                    font-size 18px
+                                    @media mobile
+                                        font-size 15px
+                                p
+                                    width 100%
+                                    margin-left 10px
+                                h4
+                                    width 50%
+                        .edicion
+                            padding 20px
+                            .formulario-constructora
+                                display flex
+                                justify-content center
+                                flex-direction column
+                            .contenedor-guardar-constructora
+                                .btn-guardar-constructora
+                                    background-color #46ad46
+                                    span
+                                        color white
+                                        font-size 14px
+                                        font-weight 800

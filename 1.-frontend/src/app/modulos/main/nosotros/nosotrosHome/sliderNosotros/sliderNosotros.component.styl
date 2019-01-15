@@ -1,0 +1,72 @@
+@import  '../../../../../../defaults.styl'
+
+ngx-slick
+	width 100%
+.encabezado
+	.titulo
+		padding 20px
+		h1
+			margin 0
+			color gray
+			height 40px
+			font-size 46px
+			font-weight bolder
+	.texto
+		margin-top 10px
+		margin-bottom 40px
+		padding 20px
+		p
+			font-size 16px
+			margin 0
+			text-align justify
+.slider
+	height 235px
+	display flex
+	align-items center
+	justify-content center
+	.carousel
+		height 235px
+		display flex
+		align-items center
+		justify-content center
+		.slick-list
+			height 235px
+			width 760px
+			.slick-track
+				height 235px
+				.slide
+					&:focus
+						outline 0px
+					.imagen-slider-nosotros
+						width 247px
+						height 215px
+						img
+							width 100%
+							height 100%
+		button.slick-prev
+			left inherit !important
+			right 99%
+			top 39%
+			z-index 1
+			width 45px
+			height 45px
+			background-color #e8e8e8
+			&:before
+				font-family inherit
+				content '‹'
+				font-size 54px
+				line-height 0.5
+				color #afafaf
+		button.slick-next
+			right inherit !important
+			left 98%
+			top 39%
+			width 45px
+			height 45px
+			background-color #e8e8e8
+			&:before
+				font-family inherit
+				content '›'
+				font-size 54px
+				line-height 0.5
+				color #afafaf

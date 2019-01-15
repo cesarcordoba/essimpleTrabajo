@@ -1,0 +1,57 @@
+.grid-proyectos-inversionistas
+    mat-grid-list(
+        cols="2",
+        cols-sm="1",
+        cols-xs="1",
+        cols-md="2"
+        rowHeight="{{height}}"
+        )
+        mat-grid-tile(*ngFor="let proyecto of proyectos", [colspan]="colspan", [rowspan]="rowspan", (click)="verMetricas(proyecto)")
+            .proyecto
+                .portada-container
+                    .portada
+                        img(src="{{proyecto?.portadas[0]?.link}}")
+                    .circulo-porcentaje
+                        p {{proyecto.porcentaje}}%
+                    .progreso
+                        mat-progress-bar(
+                            class="example-margin",
+                            [color]="color",
+                            [mode]="mode",
+                            [value]="proyecto.porcentaje")
+                .info-basica
+                    h3 {{proyecto.nombre}}
+                    h4 {{proyecto.fecha_inicio | date: 'mediumDate'}}
+                    .linea-division-proyectos
+                    p {{proyecto.resumen}}
+    .cerrar-metricas(*ngIf="habilitado")
+        button.btn-cerrarMetricas(mat-button, (click)="ocultarMetricas()")
+            mat-icon clear
+    .metricas-container(*ngIf="habilitado")
+        .contenedor-izquierda
+            .porcentaje-acumulado
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color",
+                    [mode]="mode",
+                    [value]="value",
+                    [diameter]="diameter")
+                h3 Porcentaje actual: {{value}}%
+            .pago-minimo
+                p  Pago minimo de inversion: ${{metrica?.minimo}}
+        .contenedor-centro
+            .fecha-transcurrida
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color_fecha",
+                    [mode]="mode_fecha",
+                    [value]="value_fecha",
+                    [diameter]="diameter_fecha")
+            .fecha-numero
+                p  Tiempo de duracion: {{metrica?.plazo}} meses 
+        .contenedor-derecha
+            .meta
+                h1 Meta: ${{metrica?.meta}}
+            .conseguido
+                h1 Acumulado actualmente: ${{metrica?.acumulado}}
+//-mat-paginator([length]="proyectos.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

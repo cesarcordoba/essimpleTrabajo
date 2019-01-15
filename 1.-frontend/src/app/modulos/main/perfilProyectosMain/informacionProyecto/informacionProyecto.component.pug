@@ -1,0 +1,63 @@
+.proyecto-container.mat-elevation-z12
+    .proyecto-content
+        .texto
+            .circulo-porcentaje
+                p 60%
+            .encabezado
+                h4 {{proyecto.nombre}}
+            mat-progress-bar(class="example-margin",[color]="color",[mode]="mode",[value]="value")
+            .fechas
+                h1 ${{proyecto.acumulado}}.00
+                .linea-separacion
+                h4 Conseguido de ${{proyecto.meta}}.00 meta
+                .linea-separacion
+                p Dias: 10 Horas: 6 Minutos: 30
+            .extras
+                .tipo-inversion
+                    .atributo
+                        p Tipo de participación:
+                    .linea-atributo
+                    .valor
+                        //- h4 ${{proyecto?.participacion}}
+                        h4 Equity
+                .meta
+                    .atributo
+                        p Meta requerida:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.meta}}
+                .minimo
+                    .atributo
+                        p Minimo de inversion:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.minimo}}
+                .plazo
+                    .atributo
+                        p Plazo estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.plazo}}meses
+                .rendimiento
+                    .atributo
+                        p Rendimiento estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.rendimiento}}%
+                .retorno
+                    .atributo
+                        p Retorno anual estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.retorno}}%
+                .pago-utilidades
+                    .atributo
+                        p Pago de utilidades:
+                    .linea-atributo
+                    .valor
+                        //- h4 ${{proyecto?.pago_utilidades}}
+                        h4 Al final del proyecto
+            .btn-invertir
+                button.btn-invertir-proyectos(mat-button, (click)="inversion()") Invertir
+        .imagen
+            img(src="{{proyecto?.imagenes[1]?.link}}")

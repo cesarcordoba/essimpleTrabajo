@@ -1,0 +1,4 @@
+mat-spinner(*ngIf="loader == true",  [mode]="'indeterminate'", color="primary")
+.img(*ngIf="imagen")
+    img(*ngIf="imagen",[src]="imagen?.url",  (load)="cargando()", (click)="eventClick(imagen)")
+    mat-checkbox(#matcheckbox ,[checked]="true", [disabled]="true",  *ngIf="mostrar").check

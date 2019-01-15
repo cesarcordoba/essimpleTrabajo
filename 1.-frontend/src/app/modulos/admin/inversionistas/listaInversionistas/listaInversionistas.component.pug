@@ -1,0 +1,25 @@
+mat-card.lista-inversionistas
+    mat-table(mat-table, [dataSource]="usuarios.items", class="mat-elevation-z8")
+        ng-container(matColumnDef="nombre")
+            mat-header-cell( *matHeaderCellDef) Nombre
+            mat-cell( *matCellDef="let element") {{element.nombre}}
+        ng-container(matColumnDef="vacio1")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="vacio2")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="vacio3")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="botones")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element")
+                .botones
+                    a(mat-button, (click)="mandarAInversionista(element.id)", matTooltip="Ver información")
+                        mat-icon remove_red_eye
+                    a(mat-button, (click)="borrarInversionista(element)", matTooltip="Eliminar" )
+                        mat-icon delete
+        mat-header-row( *matHeaderRowDef="['nombre','vacio1','vacio2','vacio3', 'botones']")
+        mat-row(*matRowDef="let row; columns: ['nombre','vacio1','vacio2','vacio3', 'botones'];")
+    mat-paginator([length]="usuarios.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

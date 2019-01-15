@@ -1,0 +1,6 @@
+.seccion-galeria
+    .titulo
+        h1 Galeria
+    .imagen-grande
+        img(src="{{proyectos?.items[1].imagenes[0]?.link}}").mat-elevation-z12
+    sliderGaleria([proyectos]="proyectos")

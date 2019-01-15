@@ -1,0 +1,39 @@
+main
+    header
+        mat-toolbar
+            button.logo(mat-button (click)="ir('')")
+                .logo-content
+                    img(src="assets/images/simple.png")
+            .links
+                div(*ngFor="let link of navLinks" )
+                    button.menus(mat-button, [routerLink]="link.path" ) {{link.label}}
+            .menu
+                div(*ngIf="usuario === null")
+                    button.iniciar-sesion(mat-button, (click)="login()") Iniciar Sesión
+                div(*ngIf="usuario !== null")
+                    button.avatarbutton(mat-button, [mat-menu-trigger-for]="menuUser")
+                        .avatar-content
+                            .avatar([ngStyle]="{ 'background-image' :' url(' +  usuario?.avatares[0]?.link +  ')' }")
+                            span  Hola {{usuario?.nombre}}
+                mat-menu(#menuUser="matMenu")
+                    a(mat-menu-item, (click)="redireccionar()")
+                        mat-icon account_box
+                        span {{ usuario?.nombre }}
+                    a(mat-menu-item, (click)="salir()")
+                        mat-icon exit_to_app
+                        span Cerrar Sesión  
+        
+    .contenido
+        router-outlet
+    footer
+        .footer
+            .derechos
+                img(src="assets/images/loguito.png")
+                p 2018 Es Simple todos los derechos reservados
+            .contactos
+                .correo
+                    mat-icon mail
+                    p es.simplecrowd@outlook.com
+                .telefono
+                    mat-icon phone
+                    p (229) 286 20 03

@@ -1,0 +1,69 @@
+.registro-container
+	.registro-content
+		mat-horizontal-stepper(#stepper)
+			mat-step([stepControl]="segundoFormGroup")
+				ng-template(matStepLabel) Paso 1
+				form.formulario([formGroup]="registroContratistaForm", (ngSubmit)="registrarContratista(registroContratistaForm)", novalidate)
+					h1 Registro de contratistas
+					.contenido
+						.linea
+							mat-form-field(appearance="outline")
+								mat-label Dirección
+								input(matInput, formControlName="direccion", autocomplete="off", required)
+							mat-form-field(appearance="outline")
+								mat-label Teléfono
+								input(matInput, formControlName="telefono", autocomplete="off", required)
+							mat-form-field(appearance="outline")
+								mat-label Pagina web
+								input(matInput, formControlName="paginaWeb", autocomplete="off", required)
+						.linea
+							mat-form-field(appearance="outline")
+								mat-label # promedio anual de casas
+								input(matInput, formControlName="numPromAnaualCasas", autocomplete="off", required)
+							mat-form-field(appearance="outline")
+								mat-label Costo Promedio 
+								input(matInput, formControlName="costoPromedio", autocomplete="off", required)
+							mat-form-field(appearance="outline")
+								mat-label Volumen
+								input(matInput, formControlName="volumen", autocomplete="off", required)
+						.eleccion
+							mat-checkbox((change)="activar($event.checked)") Arquitectos
+							mat-checkbox((change)="activar2($event.checked)") Constructoras
+					.boton
+						button(mat-stroked-button, type="submit" , matStepperNext, matTooltip="Continuar") Continuar
+					//-button(mat-button, mat-stroked-button, matStepperNext) Saltar este paso
+			mat-step([stepControl]="terceroFormGroup")
+				ng-template(matStepLabel) Paso 2
+				.constructora(*ngIf="constructora === 1")
+					form.formulario([formGroup]="registroConstructoraForm", (ngSubmit)="registrarConstructora(registroConstructoraForm)", novalidate)
+						h1 Registro de constructoras
+						.contenido
+							.linea
+								mat-form-field(appearance="outline")
+									mat-label Nombre
+									input(matInput, formControlName="nombreConstructora", autocomplete="off", required)
+								mat-form-field(appearance="outline")
+									mat-label Director
+									input(matInput, formControlName="director", autocomplete="off", required)
+								mat-form-field(appearance="outline")
+									mat-label Dirección
+									input(matInput, formControlName="direccion", autocomplete="off", required)
+							.linea
+								mat-form-field(appearance="outline")
+									mat-label Fecha de constitución
+									input(matInput, formControlName="fecha_constitucion", autocomplete="off", required)
+								mat-form-field(appearance="outline")
+									mat-label R.F.C 
+									input(matInput, formControlName="rfc", autocomplete="off", required)
+						.boton
+							button(mat-stroked-button, type="submit") Finalizar
+				.arquitecto(*ngIf="arquitecto === 1")
+					form.formulario([formGroup]="registroArquitectoForm", (ngSubmit)="registrarArquitecto(registroArquitectoForm)", novalidate)
+						h1 Registro de arquitectos
+						.contenido
+							.linea
+								mat-form-field(appearance="outline")
+									mat-label Cédula Profesional
+									input(matInput, formControlName="cedula", autocomplete="off", required)
+						.boton
+							button(mat-stroked-button, type="submit") Finalizar

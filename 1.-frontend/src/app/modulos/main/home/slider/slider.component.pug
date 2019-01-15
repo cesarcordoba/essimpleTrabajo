@@ -1,0 +1,7 @@
+.slider-principal
+    .slider(*ngIf="proyectos")
+        ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+            .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
+                .imagen-principal
+                    img(src="{{proyecto?.imagenes[0]?.link}}")
+    .barra-degradada-principal

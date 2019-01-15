@@ -1,0 +1,134 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"aplicacion": {
+			"root": "",
+			"sourceRoot": "src",
+			"projectType": "application",
+			"prefix": "app",
+			"schematics": {
+				"@schematics/angular:component": {
+					"styleext": "styl"
+				}
+			},
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/browser",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "src/tsconfig.app.json",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						],
+						"styles": [
+							"src/styles.styl",
+							"./node_modules/dropify/dist/css/dropify.min.css",
+							"./node_modules/slick-carousel/slick/slick.scss",
+							"./node_modules/slick-carousel/slick/slick-theme.scss",
+							"./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+							"./node_modules/froala-editor/css/froala_style.min.css",
+							"./node_modules/font-awesome/css/font-awesome.css"							
+						],
+						"scripts": [
+							"./node_modules/jquery/dist/jquery.min.js",
+							"./node_modules/dropify/dist/js/dropify.min.js",
+							"./node_modules/slick-carousel/slick/slick.min.js",
+							"./node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+							"./node_modules/gsap/src/uncompressed/TweenMax.js",
+							"./node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
+							"./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
+							"./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"							
+						]
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "aplicacion:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "aplicacion:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "aplicacion:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/test.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "src/tsconfig.spec.json",
+						"karmaConfig": "src/karma.conf.js",
+						"styles": [
+							"src/styles.styl"
+						],
+						"scripts": [],
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						]
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"src/tsconfig.app.json",
+							"src/tsconfig.spec.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"server": {
+					"builder": "@angular-devkit/build-angular:server",
+					"options": {
+						"outputPath": "dist/server",
+						"main": "src/main.server.ts",
+						"tsConfig": "src/tsconfig.server.json"
+					}
+				}
+			}
+		}
+	},
+	"defaultProject": "aplicacion"
+}

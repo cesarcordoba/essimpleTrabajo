@@ -1,0 +1,10 @@
+.registro-home-container
+    .registro-home-content
+        .titulo
+            h1 Registrate
+            p Registra tu correo electronico y recibe las ofertas mas nuevas
+        .formulario-home-registro
+            form.formulario([formGroup]="formulario", (ngSubmit)="submit(subscriptor)", novalidate)
+                input(formControlName="suscriptor",name="suscriptor", placeholder="Correo Electronico", [(ngModel)]="subscriptor.suscriptor", required).correo
+                button(mat-raised-button, type="submit").btnRegistro REGISTRATE
+                //-button(mat-raised-button, type="submit").mat-elevation-z10 REGISTRATE

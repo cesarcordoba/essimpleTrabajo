@@ -1,0 +1,91 @@
+@import  '../../../../../defaults.styl'
+.ficha
+    border 2px solid rgba(220,220,220,0.4)
+    width 290px
+    .proyecto
+        position relative
+        .circulo-porcentaje
+            position absolute
+            border 3px solid #00838e
+            border-radius 40px
+            top 20px
+            right 20px
+            width 45px
+            height 45px
+            display flex
+            justify-content center
+            align-items center
+            background-color #fff
+            z-index 10
+            p
+                font-size 15px
+                margin 0
+                font-weight bolder
+                background -webkit-linear-gradient(#009A8C, #003B94)
+                -webkit-background-clip text
+                -webkit-text-fill-color transparent
+        .ubicacion
+            height 50px
+            display flex
+            flex-direction column
+            justify-content space-between
+            h4
+                margin 0
+                font-size 14px
+                margin-left 10px
+                margin-top 3px
+            .mat-progress-bar 
+                &.mat-warn 
+                    .mat-progress-bar-fill 
+                        &::after 
+                            background-color #00838e
+                    .mat-progress-bar-buffer 
+                        background-color #dff3fd
+        .portada
+            width 290px
+            height 217px
+            img
+                width 100%
+                height 100%
+        .titulo
+            display flex
+            height 50px
+            justify-content center
+            align-items center
+            background-color rgba(220,220,220,0.4)
+            h3
+                font-size 15px
+                margin 0
+        .texto-container
+            padding 20px
+            .texto-content
+                width 248px
+                position relative
+                .meta, .minimo, .plazo, .rendimiento, .retorno
+                    height 17px
+                    display flex
+                    flex-direction row
+                    justify-content center
+                    align-items center
+                    .atributo
+                        p
+                            font-size 10px
+                            margin 0
+                    .linea-atributo
+                        width 100%
+                        height 1px
+                        background-color rgba(220,220,220,0.6)
+                    .valor
+                        h4
+                            text-align right 
+                            font-size 10px
+                            margin 0
+                .plazo
+                    .atributo
+                        width 146px
+                .rendimiento
+                    .atributo
+                        width 241px
+                .retorno
+                    .atributo
+                        width 270px

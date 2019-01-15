@@ -1,0 +1,15 @@
+
+mat-card.componente([ngStyle]="borde")
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 sliderProyectosRelacionadosContra
+                strong slider
+            .detalles
+                p Página actual : {{ currentSlide }}
+                span Numero de elementos : {{ proyectos.items.length }}
+    .slider(*ngIf="proyectos")
+        ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+            .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
+                fichaProyectoMain([proyecto]="proyecto")
+// mat-paginator([length]="proyectos.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

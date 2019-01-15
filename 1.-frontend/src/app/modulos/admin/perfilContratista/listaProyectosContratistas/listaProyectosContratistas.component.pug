@@ -1,0 +1,28 @@
+
+mat-card.lista-proyectos-inversionistas
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 Lista de sus proyectos
+    mat-table(mat-table, [dataSource]="proyectos", class="mat-elevation-z6")
+        ng-container(matColumnDef="nombre")
+            mat-header-cell( *matHeaderCellDef) Nombre
+            mat-cell( *matCellDef="let element") {{element.nombre}}
+        ng-container(matColumnDef="vacio1")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="vacio2")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="vacio3")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="botones")
+            mat-header-cell( *matHeaderCellDef)
+            mat-cell( *matCellDef="let element")
+                .botones
+                    a(mat-button, (click)="mandarAProyecto(element.id)", matTooltip="ir al proyecto")
+                        mat-icon remove_red_eye
+        mat-header-row( *matHeaderRowDef="['nombre','vacio1','vacio2','vacio3', 'botones']")
+        mat-row(*matRowDef="let row; columns: ['nombre','vacio1','vacio2','vacio3', 'botones'];")
+

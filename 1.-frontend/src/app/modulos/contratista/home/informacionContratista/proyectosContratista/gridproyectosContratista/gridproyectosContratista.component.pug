@@ -1,0 +1,47 @@
+mat-card.componente
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 gridproyectosContratista
+                strong Grid
+    mat-grid-list(
+        cols="{{columnas}}",
+        rowHeight="{{height}}"
+        )
+        mat-grid-tile( *ngFor="let proyecto of proyectos", [colspan]="colspan", [rowspan]="rowspan", (click)="verMetricas(proyecto)")
+            .proyecto
+                .portada
+                    img(src="{{proyecto?.portada?.link}}")
+                .info-basica
+                    h4 {{proyecto.nombre}}
+                    p {{proyecto.createdAt | date: 'mediumDate'}}
+                    p {{proyecto.resumen}}
+    .metricas-container(*ngIf="habilitado")
+        .contenedor-izquierda
+            .porcentaje-acumulado
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color",
+                    [mode]="mode",
+                    [value]="value",
+                    [diameter]="diameter")
+                p {{value}}%
+            .pago-minimo
+                h4 ${{metrica?.minimo}}
+        .contenedor-centro
+            .fecha-transcurrida
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color_fecha",
+                    [mode]="mode_fecha",
+                    [value]="value_fecha",
+                    [diameter]="diameter_fecha")
+            .fecha-numero
+                h4  {{metrica?.plazo}} meses 
+        .contenedor-derecha
+            .meta
+                h1 ${{metrica?.meta}}
+            .conseguido
+                h1 ${{metrica?.acumulado}}
+            
+//-mat-paginator([length]="proyectos.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

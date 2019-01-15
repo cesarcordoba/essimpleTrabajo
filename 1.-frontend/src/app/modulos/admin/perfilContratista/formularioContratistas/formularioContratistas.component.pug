@@ -1,0 +1,30 @@
+mat-card.formulario-contratista-admin
+    mat-toolbar
+        mat-toolbar-row(style="justify-content : space-between")
+            .titulo
+                h3 Información Básica
+    //- .editar
+    //-     button.btn-editar-contratista(mat-button, (click)="editarContratista()")
+    //-         span(*ngIf="!valid") Editar
+    //-         mat-icon(*ngIf="!valid") edit
+    //-         span(*ngIf="valid") Cancelar
+    //-         mat-icon(*ngIf="valid") clear
+    .info-preview(*ngIf="!valid")
+        .nombre
+            p Nombre(s): 
+            h4 {{ usuario?.nombre }}
+        .apellidos
+            p Apellido(s): 
+            h4 {{ usuario?.apellido }}
+        .correo
+            p Correo electrónico: 
+            h4 {{ usuario?.correo }}
+    .info-editable(*ngIf="valid")
+        form(class="example-form")
+            mat-form-field
+                input(matInput, placeholder="Busca un nombre", [(ngModel)]="usuario.nombre",  name="nombre")
+            mat-form-field
+                input(matInput, placeholder="Busca un apellido", [(ngModel)]="usuario.apellido",  name="apellido")
+            mat-form-field
+                input(matInput, placeholder="Busca un correo", [(ngModel)]="usuario.correo",  name="correo")
+        button.btn-guardar-contratista(mat-raised-button (click)="aceptar()") Guardar Cambios

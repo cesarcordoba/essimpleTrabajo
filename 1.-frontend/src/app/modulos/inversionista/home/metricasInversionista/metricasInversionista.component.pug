@@ -1,0 +1,29 @@
+mat-card.componente([ngStyle]="borde")
+    button(mat-button, (click)="subir()") Subir
+    button(mat-button, (click)="otro()") Otro
+    .metricas-container
+        .contenedor-izquierda
+            .porcentaje-acumulado
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color",
+                    [mode]="mode",
+                    [value]="value",
+                    [diameter]="diameter")
+            .pago-minimo
+                h4 $5,000
+        .contenedor-centro
+            .fecha-transcurrida
+                mat-progress-spinner(
+                    class="example-margin",
+                    [color]="color_fecha",
+                    [mode]="mode_fecha",
+                    [value]="value_fecha",
+                    [diameter]="diameter_fecha")
+            .fecha-numero
+                h4  100 dias transcurridos
+        .contenedor-derecha
+            .meta
+                h1 $3,000,000
+            .conseguido
+                h1 $350,000

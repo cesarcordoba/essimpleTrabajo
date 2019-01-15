@@ -1,0 +1,23 @@
+mat-card.lista-usuarios
+    mat-table(mat-table, [dataSource]="usuarios.items", class="mat-elevation-z6")
+        ng-container(matColumnDef="nombre")
+            mat-header-cell( *matHeaderCellDef) Nombre
+            mat-cell( *matCellDef="let element") {{element.nombre}}
+        ng-container(matColumnDef="vacio1")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="tipo")
+            mat-header-cell( *matHeaderCellDef) Tipo de usuario:(inverionista/contratista)
+            mat-cell( *matCellDef="let element") {{element.tipo}}
+        ng-container(matColumnDef="vacio3")
+            mat-header-cell( *matHeaderCellDef)
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="botones")
+            mat-header-cell( *matHeaderCellDef) Botones
+            mat-cell( *matCellDef="let element")
+                .botones
+                    a(mat-button, (click)="borrarProyecto(element)", matTooltip="Eliminar")
+                        mat-icon delete
+        mat-header-row( *matHeaderRowDef="['nombre','vacio1','tipo','vacio3', 'botones']")
+        mat-row(*matRowDef="let row; columns: ['nombre','vacio1','tipo','vacio3', 'botones'];")
+    mat-paginator([length]="usuarios.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

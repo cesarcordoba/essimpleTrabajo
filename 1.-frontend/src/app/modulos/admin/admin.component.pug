@@ -1,0 +1,31 @@
+div(class="contenedor", [class.isMobile]="mobileQuery.matches")
+    mat-toolbar(color="primary" class="nav-toolbar mat-elevation-z8")
+        button(mat-icon-button, (click)="snav.toggle()", matTooltip="Abrir menu")
+            mat-icon menu
+        span(class="tool-bar-spacer")
+        //-h1(*ngIf="usuario") Bienvenido Administrador
+        //-h1(*ngIf="usuario") Bienvenido {{usuario.getNombre()}}
+        span(class="tool-bar-spacer")
+        a(mat-button, *ngIf="usuario", [mat-menu-trigger-for]="menuUser").active
+            mat-icon account_circle            
+    mat-sidenav-container(class="sidenav-container", [style.marginTop.px]="mobileQuery.matches ? 65 : 0")
+        mat-sidenav(#snav, [mode]="mobileQuery.matches ? 'over' : 'side'", [fixedInViewport]="mobileQuery.matches", fixedTopGap="65", [opened]="mobileQuery.matches? false : true")
+            mat-nav-list
+                mat-list-item(*ngFor="let link of navLinks", class="mat-elevation-z2", [routerLink]="link.path", [routerLinkActive]="['active-nav']", (click)="snav.toggle()" )
+                    mat-icon {{link.icon}}
+                    p {{link.label}}
+        mat-sidenav-content
+            div.contenido
+                router-outlet
+
+
+mat-menu(#menuUser="matMenu")
+    a(mat-menu-item, [routerLink]="['/admin/perfil']")
+        mat-icon account_box
+        //- span(*ngIf="usuario && !usuario.getNombre()") {{usuario.getCorreo()}}
+        //- span(*ngIf="usuario && usuario.getNombre()") {{usuario.getNombre()}}
+    a(mat-menu-item, [routerLink]="'/login'", (click)="salir()")
+        mat-icon exit_to_app
+        span Cerrar Sesión  
+
+

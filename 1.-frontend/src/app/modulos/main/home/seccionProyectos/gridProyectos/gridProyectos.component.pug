@@ -1,0 +1,8 @@
+.proyectos-grid-main
+    .barra
+    mat-grid-list(
+        cols="{{columnas}}",
+        rowHeight="{{height}}"
+        )
+        mat-grid-tile( *ngFor="let proyecto of proyectos?.items", [colspan]="colspan", [rowspan]="rowspan")
+            fichaProyectoMain([proyecto]="proyecto", (click)="mandarAProyecto(proyecto.id)")

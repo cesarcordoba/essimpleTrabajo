@@ -1,0 +1,10 @@
+.encabezado
+    .titulo
+        h1 Nosotros
+    .texto
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa suscipit ratione asperiores quos dignissimos itaque esse dolore, perferendis cumque, non corrupti cupiditate nulla delectus, quia inventore et deleniti vel pariatur?,Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa suscipit ratione asperiores quos dignissimos itaque esse dolore, perferendis cumque, non corrupti cupiditate nulla delectus, quia inventore et deleniti vel pariatur?
+.slider(*ngIf="proyectos")
+    ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+        .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
+            .imagen-slider-nosotros
+                img(src="{{proyecto?.portadas[1]?.link}}")

@@ -1,0 +1,7 @@
+.formulario-content
+    form.formulario([formGroup]="formulario", (ngSubmit)="submit(contacto)", novalidate)
+        input(formControlName="nombre",name="nombre", placeholder="Nombre Completo", [(ngModel)]="contacto.nombre", required)
+        input(formControlName="correo",name="correo", placeholder="Correo Electronico", [(ngModel)]="contacto.correo", required)
+        input(formControlName="empresa",name="empresa", placeholder="Nombre de la Empresa", [(ngModel)]="contacto.empresa", required)
+        textarea(formControlName="mensaje",name="mensaje", cols="30", rows="10", placeholder="Mensaje", [(ngModel)]="contacto.mensaje", required)
+        button(mat-raised-button, type="submit").mat-elevation-z12 ENVIAR

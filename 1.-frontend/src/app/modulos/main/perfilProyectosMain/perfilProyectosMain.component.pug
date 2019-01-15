@@ -1,0 +1,39 @@
+.proyecto-inidivual-container
+    .proyecto-inidivual-content
+        .arriba-proyecto
+            .imagen-fondo-proyecto
+            informacionProyecto([proyecto]="proyecto", [usuario]="usuario")
+        .mapa-container
+            .mapa-content
+                .contenido
+                    .titulo-contenido
+                        h1 Características
+                    .texto
+                        .algo([innerHtml] = "proyecto.contenido")
+                .mapa-ubicacion
+                    .mapa
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29877.634983562795!2d-100.3955254120336!3d20.60012700348012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x44b577c54d63c101!2sTryadd%2C+S.A.+de+C.V.!5e0!3m2!1ses!2smx!4v1543436191701" width="425" height="350" frameborder="0" style="border:0" allowfullscreen)
+                    .usuario
+                        .creador-container
+                            .creador-titulo
+                                h4 Información del contratista
+                            .creador-content
+                                .contactos-usuario
+                                    .telefono
+                                        mat-icon.phone phone
+                                        p {{usuario.Contratista.telefono}}
+                                    .correo
+                                        mat-icon.mail mail
+                                        p {{usuario.correo}}
+                                    .pagina
+                                        mat-icon.web public
+                                        p {{usuario.Contratista.paginaWeb}}
+                                .info
+                                    h3 {{usuario.nombre}}
+                                    p {{usuario.Contratista.direccion}}
+                        .ubicacion-proyecto
+                            .ubicacion-titulo
+                                    h4 Dirección del proyecto
+                            .ubicacion-texto
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ullam enim incidunt laborum suscipit praesentium asperiores modi repellat esse qui, culpa rerum cum vel quaerat nemo error optio quas eum?
+        proyectosRelacionados

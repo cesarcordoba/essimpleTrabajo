@@ -1,0 +1,40 @@
+.proyectos-container
+    .proyecto(*ngFor="let proyecto of proyectos")
+        .imagen
+            img(src="{{proyecto?.portadas[1]?.link}}")
+            .btn-mas
+                h1 +
+        .texto-container
+            .titulo
+                h1 {{proyecto?.nombre}}
+            .texto-content
+                .meta
+                    .atributo
+                        p Meta:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.meta}}
+                .minimo
+                    .atributo
+                        p Minimo:
+                    .linea-atributo
+                    .valor
+                        h4 ${{proyecto?.minimo}}
+                .plazo
+                    .atributo
+                        p Plazo estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.plazo}}meses
+                .rendimiento
+                    .atributo
+                        p Rendimiento estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.rendimiento}}%
+                .retorno
+                    .atributo
+                        p Retorno anual estimado:
+                    .linea-atributo
+                    .valor
+                        h4 {{proyecto?.retorno}}%

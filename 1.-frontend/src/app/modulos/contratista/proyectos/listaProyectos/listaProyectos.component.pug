@@ -1,0 +1,19 @@
+mat-card.lista-proyectos-contratista
+    mat-table(mat-table, [dataSource]="proyectos.items", class="mat-elevation-z8")
+        ng-container(matColumnDef="nombre")
+            mat-header-cell( *matHeaderCellDef) Nombre
+            mat-cell( *matCellDef="let element") {{element.nombre}}
+        ng-container(matColumnDef="vacio3")
+            mat-header-cell( *matHeaderCellDef) 
+            mat-cell( *matCellDef="let element") 
+        ng-container(matColumnDef="botones")
+            mat-header-cell( *matHeaderCellDef) Botones
+            mat-cell( *matCellDef="let element")
+                .botones
+                    a.btn-irProyecto(mat-button, (click)="mandarAProyecto(element.id)", matTooltip="Ir al proyecto")
+                        mat-icon remove_red_eye
+                    a.btn-eliminar(mat-button, (click)="borrarProyecto(element)", matTooltip="Eliminar")
+                        mat-icon delete
+        mat-header-row( *matHeaderRowDef="['nombre','vacio3', 'botones']")
+        mat-row(*matRowDef="let row; columns: ['nombre','vacio3', 'botones'];")
+    mat-paginator([length]="proyectos.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

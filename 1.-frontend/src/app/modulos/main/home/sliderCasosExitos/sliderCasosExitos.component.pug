@@ -1,0 +1,10 @@
+.slider-casos-exitos
+    .titulo
+        h1 Casos de exito
+        .descripcion
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptatibus provident voluptatum minus doloribus illum voluptates consequatur, ipsum exercitationem sequi modi id et cumque earum! Ab quis aperiam id sapiente.
+    .slider(*ngIf="proyectos")
+        ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
+            .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
+                .imagen-casos-exito
+                    img(src="{{proyecto?.imagenes[0]?.link}}")

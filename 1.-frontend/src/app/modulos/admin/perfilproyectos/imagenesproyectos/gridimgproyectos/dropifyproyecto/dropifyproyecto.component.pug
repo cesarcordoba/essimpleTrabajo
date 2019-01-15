@@ -1,0 +1,19 @@
+mat-card.mat-elevation-z12
+	.barra-botones
+		button(mat-button, (click)="activarPortada()") Portada
+		button(mat-button, (click)="activarImagenes()") Imagenes
+	.portadas(*ngIf="portada==true")
+		.inputs
+			h3 Agrega una Portada
+			dropify([(ngModel)]="file")
+			button.btn-dropify(mat-icon-button, (click)="guardarPortada()", *ngIf="carga==false")
+				mat-icon save
+			mat-spinner(*ngIf="carga==true")
+
+	.imagenes(*ngIf="imagenes==true")
+		.inputs
+			h3 Agrega imagenes al proyecto
+			dropify([(ngModel)]="file")
+			button.btn-dropify(mat-icon-button, (click)="guardarImagenes()", *ngIf="carga==false")
+				mat-icon save
+			mat-spinner(*ngIf="carga==true")

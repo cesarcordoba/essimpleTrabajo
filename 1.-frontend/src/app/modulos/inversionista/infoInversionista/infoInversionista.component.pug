@@ -1,0 +1,59 @@
+.inverionista-container
+    .inverionista-content
+        .contenedor-izquierdo
+            .foto-perfil(*ngIf="fotoAvatar === null")
+                .barra-editar-foto-inversionista
+                    button.btn-editar-foto-inversionista(mat-button, (click)="editarFoto()")
+                        span(*ngIf="!edicionFoto") Editar
+                        mat-icon(*ngIf="!edicionFoto") edit
+                        span(*ngIf="edicionFoto") Cancelar
+                        mat-icon(*ngIf="edicionFoto") clear
+                .subir-foto
+                    .imagen-container(*ngIf="!edicionFoto")
+                        .imagen(*ngIf="carga==false")
+                            img([src]="fotoPerfil")
+                        mat-spinner(*ngIf="carga==true")
+                        h4 Foto de Perfil
+                    .inputs(*ngIf="edicionFoto")
+                        dropify([(ngModel)]="file")
+                        button.btn-dropify(mat-icon-button, (click)="guardarFoto()")
+                            mat-icon save
+            .foto-perfil-avatar(*ngIf="fotoAvatar !== null")
+                .subir-foto
+                    .imagen-container
+                        .imagen(*ngIf="carga==false")
+                            img([src]="fotoAvatar")
+                        h4 Foto de Avatar
+        .contenedor-derecho
+            .informacion-basica
+                .barra-editar-inversionista
+                    .titulo
+                        h3 Información Básica
+                    button.btn-usuario-inversionista(mat-button, (click)="editarInversionista()")
+                        span(*ngIf="!edicion") Editar
+                        mat-icon(*ngIf="!edicion") edit
+                        span(*ngIf="edicion") Cancelar
+                        mat-icon(*ngIf="edicion") clear
+                .usuario-inverionista
+                    .antes-edicion(*ngIf="!edicion")
+                        .nombre
+                            h4 Nombre: 
+                            p {{usuario?.nombre}}
+                        .apellido
+                            h4 Apellido:
+                            p {{usuario?.apellido}}
+                        .correo
+                            h4 Correo:
+                            p {{usuario?.correo}}
+                    .edicion(*ngIf="edicion")
+                        form.fomulario-usuarios(class="example-form")
+                            mat-form-field
+                                input(matInput, placeholder="Nombre", [(ngModel)]="usuario.nombre",  name="nombre")
+                            mat-form-field
+                                input(matInput, placeholder="Apellido", [(ngModel)]="usuario.apellido",  name="apellido")
+                            mat-form-field
+                                input(matInput, placeholder="Correo", [(ngModel)]="usuario.correo",  name="correo")
+                        .contenedor-guardar-usuario
+                            button.btn-guardar-usuario(mat-raised-button (click)="guardarUsuario()") Guardar
+
+          
