@@ -4,16 +4,42 @@ ngx-slick
 	width 100%
 .slider-casos-exitos
 	height 625px
+	@media mobile
+		height 420px
 	.slider
 		height 400px !important
 		display flex
 		align-items center
+		@media mediana
+			height 325px !important
+		@media tablet
+			height 300px !important
+		@media mobile
+			height 180px !important
 		.carousel
 			height 400px
+			@media mediana
+				height 325px !important
+			@media tablet
+				height 300px !important
+			@media mobile
+				height 180px !important
 			.slick-list
 				height 400px
+				@media mediana
+					height 325px !important
+				@media tablet
+					height 300px !important
+				@media mobile
+					height 180px !important
 				.slick-track
 					height 400px
+					@media mediana
+						height 325px !important
+					@media tablet
+						height 300px !important
+					@media mobile
+						height 180px !important
 					.slide
 						&:focus
 							outline 0px
@@ -21,6 +47,15 @@ ngx-slick
 							cursor pointer
 							width 617px
 							height 400px
+							@media mobile
+								width 160px
+								height 160px
+							@media tablet
+								width 350px
+								height 300px
+							@media mediana
+								width 400px
+								height 325px
 							img
 								width 100%
 								height 100%
@@ -32,12 +67,18 @@ ngx-slick
 				width 45px
 				height 45px
 				border 1px solid rgba(220,220,220,0.9)
+				@media mobile
+					right 10%
+					width 40px
+					height 40px
 				&:before
 					font-family inherit
 					content '←'
 					font-size 45px
 					line-height 0.5
 					color #afafaf
+					@media mobile
+						font-size 38px
 			button.slick-next
 				right inherit !important
 				left 94%
@@ -45,12 +86,18 @@ ngx-slick
 				width 45px
 				height 45px
 				border 1px solid rgba(220,220,220,0.9)
+				@media mobile
+					left 90%
+					width 40px
+					height 40px
 				&:before
 					font-family inherit
 					content '→'
 					font-size 45px
 					line-height 0.5
 					color #afafaf
+					@media mobile
+						font-size 38px
 
 	.titulo
 		display flex
@@ -59,3 +106,8 @@ ngx-slick
 		align-items center
 		.descripcion
 			width 70%
+			text-align justify
+			@media tablet
+				width 100%
+			@media mobile
+				width 100%

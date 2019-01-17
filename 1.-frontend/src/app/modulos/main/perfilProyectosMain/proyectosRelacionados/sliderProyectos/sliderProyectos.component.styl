@@ -17,6 +17,12 @@ ngx-slick
 			display flex
 			align-items center
 			justify-content center
+			@media mediana 
+				width 1000px
+			@media tablet
+				width 768px
+			@media mobile 
+				width 360px
 			.carousel
 				height 500px
 				display flex
@@ -25,10 +31,18 @@ ngx-slick
 				.slick-list
 					height 500px
 					width 960px
+					@media mediana 
+						width 1000px
+					@media tablet
+						width 768px
+					@media mobile 
+						width 360px
 					.slick-track
 						height 500px
 						.slide
 							width 305px !important
+							@media mobile
+								width 300px !important
 							&:focus
 								outline 0px
 				button.slick-prev
@@ -39,6 +53,8 @@ ngx-slick
 					width 45px
 					height 45px
 					background-color #e8e8e8
+					@media mobile
+						right 88%
 					&:before
 						font-family inherit
 						content '‹'
@@ -52,6 +68,8 @@ ngx-slick
 					width 45px
 					height 45px
 					background-color #e8e8e8
+					@media mobile
+						left 88%
 					&:before
 						font-family inherit
 						content '›'

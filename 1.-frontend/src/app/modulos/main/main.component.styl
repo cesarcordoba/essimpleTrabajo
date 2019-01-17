@@ -16,6 +16,10 @@ header
                 img
                     height 63px
                     width auto
+                    @media tablet
+                        height 40px
+                    @media mobile
+                        height 40px
                 h1
                     color gray
         .links
@@ -46,6 +50,10 @@ header
                     font-size 14px
                     color white
                     font-weight bold
+                    @media tablet
+                        font-size 12px
+                    @media mobile
+                        font-size 10px
             .avatarbutton
                 .avatar-content
                     display flex
@@ -79,11 +87,18 @@ footer
             justify-content center
             align-items center
         .derechos
+            img
+                @media mobile
+                    width 25px
+                    height 25px
             p
                 margin 0
                 font-size 11px
                 color white
                 margin-top 20px
+                @media mobile
+                    margin-left 5px
+                    margin-top 0px
         .contactos
             height 40px
             width 417px
@@ -98,8 +113,23 @@ footer
                 color white
                 @media mobile 
                     height 30px
+            .correo
+                .mail-icono
+                    width 20px
+                    height 20px
+                    font-size 20px
                 p
                     margin 0
                     font-size 14px
                     @media mobile
-                        font-size 12px 
+                        font-size 12px
+            .telefono
+                .phone-icono
+                    width 20px
+                    height 20px
+                    font-size 20px
+                p
+                    margin 0
+                    font-size 14px
+                    @media mobile
+                        font-size 12px

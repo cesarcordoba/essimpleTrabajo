@@ -3,6 +3,12 @@
     background-color white
     height 500px
     width 850px
+    @media tablet
+        width 650px
+        height 400px
+    @media mobile
+        width 305px
+        height 400px
     .proyecto-content
         display flex
         flex-direction row
@@ -12,6 +18,10 @@
             height 460px
             width 330px
             position relative
+            @media tablet
+                height 400px
+            @media mobile
+                width 305px
             .btn-invertir
                 width 100%
                 display flex
@@ -38,6 +48,16 @@
                 align-items center
                 background-color white
                 z-index 10
+                @media tablet
+                    top 16px
+                    width 40px
+                    height 40px
+                    border-radius 100px
+                @media mobile
+                    top 35px
+                    right -17px
+                    width 32px
+                    height 32px
                 p
                     margin 0
                     font-size 18px
@@ -45,9 +65,15 @@
                     background -webkit-linear-gradient(#009A8C, #003B94)
                     -webkit-background-clip text
                     -webkit-text-fill-color transparent
+                    @media tablet
+                        font-size 15px
+                    @media mobile
+                        font-size 12px
             .encabezado
                 padding 10px
                 height 35px
+                @media tablet
+                    height 20px
                 h4
                     margin 0
                     font-size 20px
@@ -65,13 +91,27 @@
                     text-align center
                     margin-bottom 10px
                     margin-top 10px
+                    @media mobile
+                        margin-bottom 7px
                 h1
                     font-size 23px
+                    @media tablet
+                        font-size 20px
+                    @media mobile
+                        font-size 17px
                 h4
                     font-size 14px
                     color gray
+                    @media tablet
+                        font-size 12px
+                    @media mobile
+                        font-size 11px
                 p
                     font-size 14px
+                    @media tablet
+                        font-size 10px
+                    @media mobile
+                        font-size 9px
                 .linea-separacion
                     height 1px
                     background-color rgba(220,220,220,0.9)
@@ -79,12 +119,18 @@
                 padding 10px
                 width 300px
                 position relative
+                @media mobile
+                    width 284px
                 .tipo-inversion, .meta, .minimo, .plazo, .rendimiento, .retorno, .pago-utilidades
                     height 35px
                     display flex
                     flex-direction row
                     justify-content center
                     align-items center
+                    @media tablet
+                        height 26px
+                    @media mobile
+                        height 24px
                     .atributo
                         p
                             font-size 12px
@@ -106,7 +152,7 @@
                         width 184px
                 .minimo
                     .atributo
-                        width 225px
+                        width 243px
                 .plazo
                     .atributo
                         width 160px
@@ -122,6 +168,10 @@
         .imagen
             width 520px
             height 500px
+            @media tablet
+                height 400px
+            @media mobile
+                display none
             img
                 width 100%
                 height 100%

@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'proyectosRelacionados',
@@ -12,9 +13,15 @@ export class ProyectosrelacionadosComponent implements OnInit {
     borde = false ?  {'border-color':'rgb(76, 175, 80)'} : {'border-color':'rgb(244, 67, 54)'}
 
 
-    constructor() {
+    constructor(private router: Router) {
 
   }
+
+  mandarAProyectos(){
+    this.router.navigate(['/proyectos' ])
+  }
+
+  
 
   ngOnInit() {
 

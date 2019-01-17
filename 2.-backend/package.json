@@ -5,9 +5,10 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "dev": "./node_modules/nodemon/bin/nodemon.js",
+    "dev": "nodemon",
     "start": "NODE_ENV=dev ts-node ./server/server.ts",
-    "prod": "npm run build && NODE_ENV=prod node ./dist/server.js"
+    "prod": "npm run build && NODE_ENV=prod node ./dist/server.js",
+    "windows": "set NODE_ENV=dev && ts-node ./server/server.ts"
   },
   "author": "",
   "license": "ISC",

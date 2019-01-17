@@ -1,13 +1,22 @@
 @import  '../../../../defaults.styl'
-
 .proyecto-inidivual-container
     display flex
     justify-content center
     .proyecto-inidivual-content
         width 1300px
+        @media mediana 
+            width 1000px
+        @media tablet
+            width 768px
+        @media mobile 
+            width 360px
         .arriba-proyecto
             height 650px
             position relative
+            @media tablet
+                height 600px
+            @media mobile 
+                height 450px
             .imagen-fondo-proyecto
                 width 100%
                 background-image: url("/assets/images/casa-nosotros.jpg");
@@ -15,6 +24,10 @@
                 background-size cover
                 background-repeat no-repeat
                 height 650px
+                @media tablet
+                    height 600px
+                @media mobile 
+                    height 450px
             informacionProyecto
                 position absolute
                 left 50%
@@ -28,12 +41,18 @@
             align-items center
             .mapa-content
                 width 850px
+                @media tablet
+                    width 768px
+                @media mobile 
+                    width 360px
                 .contenido
                     border 2px solid rgba(220,220,220,0.9)
                     background-color #efefef
                     padding 20px
                     .titulo-contenido
                         height 30px
+                        @media mobile
+                            height 40px
                         h1
                             margin 0
                             font-size 25px
@@ -53,17 +72,34 @@
                     flex-direction row
                     justify-content space-between
                     align-items center
+                    @media mobile 
+                        flex-direction column
                     .mapa
                         height 350px
                         width 411px
+                        @media tablet
+                            width 50%
+                        @media mobile
+                            width 100%
+                        iframe
+                            width 425px
+                            @media tablet
+                                width 384px
+                            @media mobile
+                                width 360px
+                            
                     .usuario
-                        border 2px solid rgba(220,220,220,0.9)
+                        border 1px solid rgba(220,220,220,0.9)
                         width 411px
                         height 350px
                         display flex
                         flex-direction column
                         justify-content center
                         align-items center
+                        @media tablet
+                            width 50%
+                        @media mobile
+                            width 100%
                         .creador-container
                             height 200px
                             width 100%
@@ -83,6 +119,8 @@
                                 .contactos-usuario
                                     height 180px
                                     width 140px
+                                    @media tablet
+                                        margin-left 10px
                                     .telefono
                                         border-radius 19px
                                         margin-bottom 10px
@@ -143,6 +181,8 @@
                                 .info
                                     height 180px
                                     width 259px
+                                    @media tablet
+                                        padding 10px
                                     h3, p
                                         margin 0
                         .ubicacion-proyecto
@@ -150,10 +190,12 @@
                             width 100%
                             .ubicacion-titulo
                                 padding 10px
-                                    h4
-                                        margin 0
-                                        font-size 14px
-                                        font-weight bolder
+                                @media tablet
+                                    margin-left 10px
+                                h4
+                                    margin 0
+                                    font-size 14px
+                                    font-weight bolder
                             .ubicacion-texto
                                 padding 10px
                                 p

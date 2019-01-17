@@ -21,6 +21,10 @@ class Config {
 			console.log("\x1b[32m", 'En Producción');
 			this._mode = NODE_ENV;
 			this.produccion()
+		}else{
+			console.log('***********No se encontro un NODE_ENV (2.-backend/conf/connfig.ts Linea 25) Por defecto se pondra en "dev"*************')
+			this._mode = 'dev'
+			this.desarrollo();
 		}
 	}
 
