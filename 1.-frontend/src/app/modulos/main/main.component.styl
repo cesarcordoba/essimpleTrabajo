@@ -20,6 +20,8 @@ header
                     color gray
         .links
             display flex
+            @media mobile
+                display none
             .menus
                 span
                     font-size 15px
@@ -67,6 +69,10 @@ footer
         flex-direction row
         justify-content space-around
         align-items center
+        @media mobile
+            flex-direction column
+        @media tablet
+            flex-direction column
         .derechos, .contactos, .correo, .telefono
             display flex
             flex-direction row
@@ -82,8 +88,18 @@ footer
             height 40px
             width 417px
             justify-content space-between
+            @media mobile
+                flex-direction column
+                width inherit
+            @media tablet
+                flex-direction column
+                width inherit
             .correo, .telefono
                 color white
+                @media mobile 
+                    height 30px
                 p
                     margin 0
                     font-size 14px
+                    @media mobile
+                        font-size 12px 

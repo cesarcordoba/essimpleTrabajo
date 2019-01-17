@@ -1,6 +1,10 @@
 @import  '../../../../../defaults.styl'
 .proyectos-container
     margin-top 15px
+    @media mediana 
+        width 1000px
+     @media tablet
+        width 768px
 .proyectos-container, .proyecto
     display flex
     flex-direction column
@@ -14,6 +18,10 @@
         background-color #efefef
         justify-content space-between
         align-items flex-start
+        @media mediana
+            width 880px
+        @media tablet
+            width 768px
         .imagen
             position relative
             width 300px
@@ -79,9 +87,13 @@
                         width 184px
         &:nth-child(1)
             margin-left 120px
+            @media tablet
+                margin-left 0px
         &:nth-child(2)
             flex-direction row-reverse
             margin-right 120px
+            @media tablet
+                margin-right 0px
             .texto-container
                 display flex
                 flex-direction column

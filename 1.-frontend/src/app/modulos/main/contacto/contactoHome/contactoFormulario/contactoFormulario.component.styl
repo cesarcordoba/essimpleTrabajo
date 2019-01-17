@@ -1,9 +1,23 @@
 @import  '../../../../../../defaults.styl'
 .formulario-content
     width 600px
+    @media mediana 
+        width 500px
+    @media tablet
+        width 400px
+        height 300px
+    @media mobile 
+        width 315px
+        height 300px
+        display flex
+        justify-content center
+        align-items center
     .formulario
         display flex
         flex-direction column
+        height 300px
+        @media mobile
+            height 293px
         input
             height 50px
         textarea
