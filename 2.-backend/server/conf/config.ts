@@ -105,8 +105,8 @@ class Config {
 				callbackURL: 'https://api.essimple.mx/login/facebook/callback'
 			},
 			google: {
-				clientID: "65502020027-2hcilnkgsbeu4n0g1agt8fd2uicgkf0f.apps.googleusercontent.com",
-				clientSecret: "AIzaSyCkzJimM5L6Za9p6C9RxNWEP8OyisLHsQU",
+				clientID: "96943483456-f582a8cf3rp4e3dt98kj789o5he35k4v.apps.googleusercontent.com",
+				clientSecret: "i15IWZAXrFT4Kl9g0jtce9Z6",
 				callbackURL: "https://api.essimple.mx/login/google/callback"
 			},
 			twitter: {

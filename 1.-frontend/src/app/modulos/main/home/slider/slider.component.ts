@@ -24,7 +24,7 @@ export class SliderComponent implements OnInit {
     filtro : any;
 
     constructor() {
-        this.slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 , "arrows" : false, 'dots' : true }
+        this.slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 , "arrows" : false, 'dots' : true, 'autoplay': true, 'autoplaySpeed': 2000}
         this.currentSlide = 0
         this.filtro = {
                 pagina : 1,

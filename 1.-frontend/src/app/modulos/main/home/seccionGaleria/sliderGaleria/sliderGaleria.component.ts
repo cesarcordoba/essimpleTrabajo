@@ -17,7 +17,7 @@ export class SlidergaleriaComponent implements OnInit {
 
     @Input() proyectos
     constructor() {
-        this.slideConfig = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : false, 'dots' : false }
+        this.slideConfig = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : false, 'dots' : false, 'autoplay': true, 'autoplaySpeed': 2000}
         this.currentSlide = 0
 
   }

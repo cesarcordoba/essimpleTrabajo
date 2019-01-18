@@ -24,7 +24,7 @@ export class SlidernosotrosComponent implements OnInit {
     filtro : any;
 
     constructor() {
-        this.slideConfig = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : true}
+        this.slideConfig = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : true, 'autoplay': true, 'autoplaySpeed': 2000}
         this.currentSlide = 0
         this.filtro = {
                 pagina : 1,
