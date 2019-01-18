@@ -1,14 +1,14 @@
 
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnDestroy, ChangeDetectorRef} from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
 
-import { ProyectoService } from '../../../../../../servicios';
 @Component({
   selector: 'gridproyectosInversionista',
   templateUrl: './gridproyectosInversionista.component.pug',
   styleUrls: ['./gridproyectosInversionista.component.styl'],
   encapsulation: ViewEncapsulation.None
 })
-export class GridproyectosinversionistaComponent implements OnInit {
+export class GridproyectosinversionistaComponent implements OnInit, OnDestroy {
 
     borde = false ?  {'border-color':'rgb(76, 175, 80)'} : {'border-color':'rgb(244, 67, 54)'}
 
@@ -33,8 +33,31 @@ export class GridproyectosinversionistaComponent implements OnInit {
     habilitado: boolean = false
     valor : any
     metrica: any;
+    mobileQuery_mediana: MediaQueryList;
+    mobileQuery_tablet: MediaQueryList;
+    mobileQuery_mobile: MediaQueryList;
+    mobileQuery_grande: MediaQueryList;
+    private _mobileQueryListener_grande: () => void;
+    private _mobileQueryListener_mediana: () => void;
+    private _mobileQueryListener_tablet: () => void;
+    private _mobileQueryListener_mobile: () => void;
 
-    constructor() {
+    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery_grande = media.matchMedia('(min-width: 1300px) and (max-width : 2900px)');
+    this._mobileQueryListener_grande = () => {changeDetectorRef.detectChanges(); this.columnas = 2 };
+    this.mobileQuery_grande.addListener(this._mobileQueryListener_grande);
+
+    this.mobileQuery_mediana = media.matchMedia('(min-width: 1000px) and (max-width : 1299px)');
+    this._mobileQueryListener_mediana = () => {changeDetectorRef.detectChanges(); this.columnas = 2 };
+    this.mobileQuery_mediana.addListener(this._mobileQueryListener_mediana);
+
+    this.mobileQuery_tablet = media.matchMedia('(min-width: 768px) and (max-width : 999px)');
+    this._mobileQueryListener_tablet = () => {changeDetectorRef.detectChanges(); this.columnas = 2 };
+    this.mobileQuery_tablet.addListener(this._mobileQueryListener_tablet);
+
+    this.mobileQuery_mobile = media.matchMedia('(max-width: 767px)');
+    this._mobileQueryListener_mobile = () => {changeDetectorRef.detectChanges(); this.columnas = 1 };
+    this.mobileQuery_mobile.addListener(this._mobileQueryListener_mobile);
     //     this.filtro = {
     //             pagina : 1,
     //             limite :  (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?  5 :  3,
@@ -71,5 +94,22 @@ export class GridproyectosinversionistaComponent implements OnInit {
 
     this.proyectos.forEach(n => this.value = n.porcentaje);
 
+    if($(window).width() > 1300){
+      this.columnas = 2
+    }else if(($(window).width() > 1000) && ($(window).width() < 1299)){
+      this.columnas = 2
+    }else if(($(window).width() > 768) && ($(window).width() < 99)){
+      this.columnas = 2
+    }else if($(window).widt() < 768){
+      this.columnas = 1
+    }
+
+  }
+
+  ngOnDestroy(){
+    this.mobileQuery_grande.removeListener(this._mobileQueryListener_grande);
+    this.mobileQuery_mediana.removeListener(this._mobileQueryListener_mediana);
+    this.mobileQuery_tablet.removeListener(this._mobileQueryListener_tablet);
+    this.mobileQuery_mobile.removeListener(this._mobileQueryListener_mobile);
   }
 }

@@ -7,6 +7,12 @@ main
             .links
                 div(*ngFor="let link of navLinks" )
                     button.menus(mat-button, [routerLink]="link.path" ) {{link.label}}
+            .menu-chiquito(*ngIf="mobileQuery.matches")
+                a(mat-button,[mat-menu-trigger-for]="otherwise").active
+                    mat-icon menu
+                mat-menu(#otherwise="matMenu")
+                    div(*ngFor="let link of navLinks" )
+                        a(mat-menu-item, [routerLink]="link.path") {{link.label}}
             .menu
                 div(*ngIf="usuario === null")
                     button.iniciar-sesion(mat-button, (click)="login()") Iniciar Sesión
