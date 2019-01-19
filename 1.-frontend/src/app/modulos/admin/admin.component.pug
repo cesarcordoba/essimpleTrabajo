@@ -1,13 +1,13 @@
 div(class="contenedor", [class.isMobile]="mobileQuery.matches")
     mat-toolbar(color="primary" class="nav-toolbar mat-elevation-z8")
         button(mat-icon-button, (click)="snav.toggle()", matTooltip="Abrir menu")
-            mat-icon menu
+            mat-icon.iconoMenu menu
         span(class="tool-bar-spacer")
         h1 Administrador
         //-h1(*ngIf="usuario") Bienvenido {{usuario.getNombre()}}
         span(class="tool-bar-spacer")
         a(mat-button,[mat-menu-trigger-for]="menuUser").active
-            mat-icon account_circle            
+            mat-icon.btn-usuario account_circle            
     mat-sidenav-container(class="sidenav-container", [style.marginTop.px]="mobileQuery.matches ? 65 : 0")
         mat-sidenav(#snav, [mode]="mobileQuery.matches ? 'over' : 'side'", [fixedInViewport]="mobileQuery.matches", fixedTopGap="65", [opened]="mobileQuery.matches? false : true")
             mat-nav-list
@@ -17,11 +17,10 @@ div(class="contenedor", [class.isMobile]="mobileQuery.matches")
         mat-sidenav-content
             div.contenido
                 router-outlet
-
-
+    .footer
+        h1 Desarrollado por Starbrand
 mat-menu(#menuUser="matMenu")
    a(mat-menu-item, [routerLink]="''")
         mat-icon exit_to_app
         span Página principal
-
 

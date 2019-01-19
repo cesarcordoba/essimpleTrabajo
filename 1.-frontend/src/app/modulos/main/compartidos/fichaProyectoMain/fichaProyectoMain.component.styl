@@ -48,9 +48,37 @@
         .portada
             width 290px
             height 217px
+            position relative
             img
                 width 100%
                 height 100%
+            &:hover
+                .btn-mas
+                    position absolute
+                    right 0
+                    top 0
+                    left 0
+                    margin auto
+                    bottom 0
+                    height 55px
+                    width 56px
+                    display flex
+                    justify-content center
+                    align-items center
+                    background-image linear-gradient(to right, #003B94 , #009A8C)
+                    cursor pointer
+                    @media mobile
+                        height 50px
+                        width 50px
+                    @media tablet
+                        height 50px
+                        width 50px
+                    &:focus
+                        outline 0px
+                    h1
+                        color white
+                        margin 0
+                        font-size 33px
         .titulo
             display flex
             height 50px

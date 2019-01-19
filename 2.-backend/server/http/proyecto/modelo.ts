@@ -95,6 +95,14 @@ export class Proyecto extends Model<Proyecto> {
 
     @Column(DataType.STRING)
     status : undefined;
+    
+
+    @Column(DataType.STRING)
+    longitud : undefined;
+    
+
+    @Column(DataType.STRING)
+    latitud : undefined;
 
 
 

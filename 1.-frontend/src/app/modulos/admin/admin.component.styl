@@ -1,3 +1,4 @@
+@import  '../../../defaults.styl'
 .tool-bar-spacer
     flex 1 1 auto
 
@@ -11,6 +12,9 @@
     right: 0;
     h1
         text-align: center
+        color white
+    .iconoMenu, .btn-usuario
+        color white
     .nav-toolbar
         margin: 0% auto
         text-align: center;
@@ -37,5 +41,22 @@
 
 .mat-drawer-container
     background-color: rgba(255,255,255, 0.1)
+
+.mat-toolbar 
+	&.mat-primary 
+        background-image linear-gradient(to right, #003B94 , #009A8C) !important
+        background inherit
+
+.footer
+    height 60px !important
+    background-image linear-gradient(to right, #003B94 , #009A8C) !important
+    display flex
+    flex-direction row
+    justify-content space-around
+    align-items center
+    h1
+        margin 0
+        color white
+        font-size 12px
 
 
