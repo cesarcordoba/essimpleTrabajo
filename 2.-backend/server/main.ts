@@ -33,6 +33,8 @@ import { LlaveRouter } from './http/llave/ruta';
 import { AvatarRouter } from './http/avatar/ruta';
 import { LogRouter } from './http/log/ruta';
 import { SubscripcionRouter } from './http/subscripcion/ruta';
+import { ServicioRouter } from './http/servicio/ruta';
+import { CantidadRouter } from './http/cantidad/ruta';
 import { Proyecto } from './http/proyecto/modelo';
 import { Contacto } from './http/contacto/modelo';
 import { Multimedia } from './http/multimedia/modelo';
@@ -46,6 +48,8 @@ import { Llave } from './http/llave/modelo';
 import { Avatar } from './http/avatar/modelo';
 import { Log } from './http/log/modelo';
 import { Subscripcion } from './http/subscripcion/modelo';
+import { Servicio } from './http/servicio/modelo';
+import { Cantidad } from './http/cantidad/modelo';
 
 
 export class Server {
@@ -88,6 +92,8 @@ export class Server {
             Avatar,
             Log,
             Subscripcion,
+            Servicio,
+            Cantidad
         ])
         conexion.sync();
 
@@ -132,6 +138,8 @@ export class Server {
             new AvatarRouter().rutas(),
             new LogRouter().rutas(),
             new SubscripcionRouter().rutas(),
+            new ServicioRouter().rutas(),
+            new CantidadRouter().rutas(),
             // new UsuarioRouter().rutas(),
              new AutentificacionRouter().rutas(),
             // new ProspectoRouter().rutas(),

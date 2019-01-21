@@ -6,6 +6,8 @@ import { Multimedia } from '../multimedia/modelo';
 import { Inversionista } from '../inversionista/modelo';
 import { Usuario } from '../usuario/modelo';
 import { Contratista } from '../contratista/modelo';
+import { Cantidad } from '../cantidad/modelo';
+import { Servicio } from '../servicio/modelo';
 
 @Table({
     timestamps: true,
@@ -120,6 +122,8 @@ export class Proyecto extends Model<Proyecto> {
     @BelongsToMany(()=> Usuario, () => Contratista,'IdProyecto', 'IdUsuario')
     Contratistas : Usuario[];
 
+    @BelongsToMany(()=> Servicio, () => Cantidad,'IdProyecto', 'IdServicio')
+    Servicios : Servicio[];
             
 
     constructor(values?: any, options?: any) {

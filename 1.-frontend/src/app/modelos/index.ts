@@ -35,4 +35,10 @@ export { Prospecto } from './prospecto.model';
 
 
         export { Subscripcion } from './Subscripcion.model';
+
+
+        export { Servicio } from './Servicio.model';
+
+
+        export { Cantidad } from './Cantidad.model';
     

@@ -38,4 +38,10 @@
 
 
         export { SubscripcionService } from './Subscripcion.service';
+
+
+        export { ServicioService } from './Servicio.service';
+
+
+        export { CantidadService } from './Cantidad.service';
     

@@ -7,9 +7,9 @@
                 h4 {{proyecto.nombre}}
             mat-progress-bar(class="example-margin",[color]="color",[mode]="mode",[value]="value")
             .fechas
-                h1 ${{proyecto.acumulado}}.00
+                h1 {{proyecto.acumulado | currency}}
                 .linea-separacion
-                h4 Conseguido de ${{proyecto.meta}}.00 meta
+                h4 Conseguido de {{proyecto.meta | currency}} meta
                 .linea-separacion
                 p Dias: 10 Horas: 6 Minutos: 30
             .extras
@@ -25,13 +25,13 @@
                         p Meta requerida:
                     .linea-atributo
                     .valor
-                        h4 ${{proyecto?.meta}}
+                        h4 {{proyecto?.meta | currency}}
                 .minimo
                     .atributo
                         p Minimo de inversion:
                     .linea-atributo
                     .valor
-                        h4 ${{proyecto?.minimo}}
+                        h4 {{proyecto?.minimo | currency}}
                 .plazo
                     .atributo
                         p Plazo estimado:

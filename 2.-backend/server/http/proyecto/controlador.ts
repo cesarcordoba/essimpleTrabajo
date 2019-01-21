@@ -136,6 +136,27 @@ export class ProyectoController {
             .then(result => res.status(200).jsonp(result))
             .catch(err => errorHandler(err, 'desligarProyectoContratistas'))
 
+    //* 5
+    cantidades = (req: Request, res: Response, next: NextFunction) =>
+        Proyecto.findById(req.params.id)
+            .then(item => item.$get('Cantidades'))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'ProyectoCantidades'))
+
+    //* 5
+    ligarcantidades = (req: Request, res: Response, next: NextFunction) =>
+        Proyecto.findById(req.params.proyecto)
+            .then(item => item.$add('Cantidades', req.params.servicio))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'ligarProyectoCantidades'))
+
+    //* 5
+    desligarcantidades = (req: Request, res: Response, next: NextFunction) =>
+        Proyecto.findById(req.params.proyecto)
+            .then(item => item.$remove('Cantidades', req.params.servicio))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'desligarProyectoCantidades'))
+
     froala = (req: Request, res: Response, next: NextFunction) => {
         var configs = {
             bucket: 'colnal-imagenes',

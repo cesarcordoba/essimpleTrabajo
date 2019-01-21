@@ -37,7 +37,9 @@
             mat-form-field
                 input(matInput, placeholder="Ubicación", [(ngModel)]="proyecto.ubicacion",  name="ubicacion", [disabled]="valid")
             mat-form-field
-                input(matInput, placeholder="URL Google Maps", [(ngModel)]="proyecto.url_ubicacion",  name="url_ubicacion", [disabled]="valid")
+                input(matInput, placeholder="Longitud", [(ngModel)]="proyecto.longitud",  name="longitud", [disabled]="valid")
+            mat-form-field
+                input(matInput, placeholder="Latitud", [(ngModel)]="proyecto.latitud",  name="latitud", [disabled]="valid")
         .extras
             mat-form-field
                 input(matInput, placeholder="Rendimiento estimado", [(ngModel)]="proyecto.rendimiento",  name="rendimiento", [disabled]="valid")

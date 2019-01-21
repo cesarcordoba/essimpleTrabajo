@@ -72,7 +72,16 @@ export class ProyectoRouter {
         this._rutas.route('/data/proyecto-usuario/:proyecto/:usuario')
             .put(this.controlador.ligarcontratistas)
             .delete(this.controlador.desligarcontratistas)
-      
+        
+        //*<-nuevo
+        this._rutas.route('/data/proyecto/Cantidades/:id')
+            .get(this.controlador.cantidades)
+
+        //*
+        this._rutas.route('/data/proyecto-servicio/:proyecto/:servicio')
+            .put(this.controlador.ligarcantidades)
+            .delete(this.controlador.desligarcantidades)
+
         }
 
     rutas() {
