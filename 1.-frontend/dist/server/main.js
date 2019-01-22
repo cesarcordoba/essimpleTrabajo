@@ -21369,8 +21369,8 @@ exports.APILOCAL = {
     url: 'http://api.lvh.me:5000'
 };
 exports.AWSKEYS = {
-    accessKeyId: 'AKIAJEYX66PCBH6V4VHQ',
-    secretAccessKey: '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',
+    accessKeyId: 'AKIAJEYX66//////////////PCBH6V4VHQ',
+    secretAccessKey: 'Vne0oFxY2Dorq0Wl9////////////////vNdDLA3J05yENUfqlQr0UfW',
     region: 'us-east-1'
 };
 
