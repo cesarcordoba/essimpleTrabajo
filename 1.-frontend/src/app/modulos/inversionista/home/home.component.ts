@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     usuario: any = {}
     proyectos: any;
     fotoPerfil: any;
+    bandera: boolean
     fotoAvatar: any = "assets/images/fotoPerfi.png";
     constructor(public route : ActivatedRoute, private titleService: Title, private meta : Meta, private us: AuthService) {
 
@@ -54,7 +55,14 @@ export class HomeComponent implements OnInit {
         UsuarioService.inversionistas(this.usuario.id)
         .then(response => {
             this.proyectos = response
-            console.log(response.data) 
+            console.log(response.data)
+            if(this.proyectos.length > 0 ){
+                this.bandera = false
+                console.log( this.bandera)
+            }else{
+                this.bandera = true
+                console.log( this.bandera)
+            }
         })
     
     })

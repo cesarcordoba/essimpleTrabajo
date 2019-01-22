@@ -12,6 +12,9 @@ export class UsuarioRouter {
     }
 
     private init() {
+
+        this._rutas.route('/data/usuario/obtenersinAdmin')
+            .get(this.controlador.obtenersinAdmin)
         //*
         this._rutas.route('/data/usuario')
             .get(this.controlador.buscar)
@@ -81,6 +84,7 @@ export class UsuarioRouter {
             .put(this.controlador.ligarcontratistas)
             .delete(this.controlador.desligarcontratistas)
 
+        
                 
         }
 

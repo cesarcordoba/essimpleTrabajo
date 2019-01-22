@@ -5,13 +5,18 @@
             mat-cell( *matCellDef="let element") {{element.nombre}}
         ng-container(matColumnDef="tipo")
             mat-header-cell( *matHeaderCellDef) Tipo de usuario
-            mat-cell( *matCellDef="let element") {{element.tipo}}
+            mat-cell( *matCellDef="let element")
+                mat-select(placeholder="Tipo", [(ngModel)]="element.tipo",  name="tipo") 
+                    mat-option(value="inversionista") Inversionista
+                    mat-option(value="contratista") Contratista
         ng-container(matColumnDef="botones")
             mat-header-cell( *matHeaderCellDef) Botones
             mat-cell( *matCellDef="let element")
                 .botones
-                    a(mat-button, (click)="borrarProyecto(element)", matTooltip="Eliminar")
+                    a(mat-button, (click)="borrarUsuario(element)", matTooltip="Eliminar")
                         mat-icon delete
+                    a(mat-button, (click)="guardarUsuario(element)", matTooltip="Guardar")
+                        mat-icon save
         mat-header-row( *matHeaderRowDef="['nombre','tipo', 'botones']")
         mat-row(*matRowDef="let row; columns: ['nombre','tipo', 'botones'];")
     mat-paginator([length]="usuarios.items.length", [pageSize]="10", [pageSizeOptions]="[5, 10, 25, 100]")

@@ -19,6 +19,7 @@ export class InformacioninversionistaComponent implements OnInit {
     @Input() proyectos
     @Input() fotoPerfil
     @Input() fotoAvatar
+    @Input() bandera
 
     constructor() {
 

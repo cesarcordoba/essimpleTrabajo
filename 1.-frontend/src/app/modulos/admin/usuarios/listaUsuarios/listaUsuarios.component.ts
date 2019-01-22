@@ -58,6 +58,27 @@ export class ListausuariosComponent implements OnInit {
       this.edicion = !this.edicion;
   }
 
+  guardarUsuario(usuario){
+    console.log(usuario)
+    UsuarioService.editar(usuario).then(response=>  this.snack.open('Usuario actualizado correctamente', '', {
+      duration: 2000,
+    }))
+  }
+
+  borrarUsuario(usuario){
+
+    this.dialog.open(ConfirmDelDialogComponent,{
+        width: '290px',
+        height: '200px'
+        }).afterClosed().subscribe(result => {
+            result ?
+            UsuarioService.eliminar(usuario.id)
+            .then(response => this.usuarios.items.splice(this.usuarios.items.indexOf(usuario),1))
+            : null;
+        });
+
+  }
+
 
   ngOnInit() {
     this.formulario = this.fb.group({

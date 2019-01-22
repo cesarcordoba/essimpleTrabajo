@@ -48,7 +48,8 @@ export class UsuarioService {
     public static ligarcontratistas = (usuario , proyecto) => axios.default.put( url + '/data/usuario-proyecto/' + usuario + '/' + proyecto )
     public static desligarcontratistas = (usuario , proyecto) => axios.default.delete( url + '/data/usuario-proyecto/' + usuario + '/' + proyecto )
 
-    
+    public static obtenerSinAdmin = () => axios.default.get( url + '/data/usuario/obtenersinAdmin').then(response => response.data.map(n => new Usuario( n )))
+
 
     //- Finalizo
 }

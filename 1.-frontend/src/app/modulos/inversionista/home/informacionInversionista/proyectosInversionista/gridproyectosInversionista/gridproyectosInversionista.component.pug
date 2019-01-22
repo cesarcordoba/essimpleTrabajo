@@ -1,4 +1,6 @@
 .grid-proyectos-inversionistas
+    .mensaje(*ngIf="bandera")
+        h3 No hay Proyectos en los que inviertas
     mat-grid-list(
         cols="{{columnas}}",
         rowHeight="{{height}}"

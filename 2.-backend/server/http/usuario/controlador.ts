@@ -176,5 +176,22 @@ export class UsuarioController {
             .then(result => res.status(200).jsonp(result))
             .catch(err => errorHandler(err, 'desligarUsuarioContratistas'))
 
+
+    obtenersinAdmin = (req: Request, res: Response, next: NextFunction) =>{
+
+        console.log("**************")
+        console.log("estas aqui papu")
+        console.log("**************")
+        Usuario.findAll()
+            .then(response =>{
+                var nuevo = [];
+                response.forEach(n=>{
+                    if(n.tipo !== "admin"){
+                        nuevo.push(n)
+                    }
+                })
+                res.status(200).jsonp(nuevo)
+            })
+            .catch(err => errorHandler(err, 'buscarUsuario'))}
                 
 }

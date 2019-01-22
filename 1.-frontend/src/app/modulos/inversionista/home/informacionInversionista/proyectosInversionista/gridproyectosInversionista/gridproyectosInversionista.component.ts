@@ -1,6 +1,7 @@
 
 import { Component, OnInit, Input, ViewEncapsulation, OnDestroy, ChangeDetectorRef} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'gridproyectosInversionista',
@@ -13,6 +14,7 @@ export class GridproyectosinversionistaComponent implements OnInit, OnDestroy {
     borde = false ?  {'border-color':'rgb(76, 175, 80)'} : {'border-color':'rgb(244, 67, 54)'}
 
     @Input() proyectos
+    @Input() bandera
     color = 'primary';
     mode = 'determinate';
     value = 0;
@@ -43,6 +45,7 @@ export class GridproyectosinversionistaComponent implements OnInit, OnDestroy {
     private _mobileQueryListener_mobile: () => void;
 
     constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    
     this.mobileQuery_grande = media.matchMedia('(min-width: 1300px) and (max-width : 2900px)');
     this._mobileQueryListener_grande = () => {changeDetectorRef.detectChanges(); this.columnas = 2 };
     this.mobileQuery_grande.addListener(this._mobileQueryListener_grande);
@@ -103,6 +106,8 @@ export class GridproyectosinversionistaComponent implements OnInit, OnDestroy {
     }else if($(window).widt() < 768){
       this.columnas = 1
     }
+
+
 
   }
 
