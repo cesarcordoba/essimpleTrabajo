@@ -1,5 +1,6 @@
 .perfil-proyectos-container
-    mat-card.perfil-proyectos-content
+    .perfil-proyectos-content
         informacionproyecto([proyectos]="proyecto", [options]="options")
+        chipServicios([id]="proyecto.id")
         imagenesproyectos([proyectos]="proyecto")
         //-usauriosproyecto

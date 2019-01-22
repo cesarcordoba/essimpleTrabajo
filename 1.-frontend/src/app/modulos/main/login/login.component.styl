@@ -11,6 +11,9 @@
         flex-direction column
         height auto
         width 100%
+        h1
+            @media mobile
+                display none
         .contenido
             display: flex
             flex-direction: column;
@@ -21,8 +24,12 @@
                         margin-right 5px
                     &.last-child
                         margin-left 5px
+                @media mobile
+                    flex-direction column
+                    justify-content center
+                    align-items center
             .linea-contratista
-                display flex
+                display none
                 flex-direction column
                 justify-content center
                 margin-bottom 10px
@@ -37,6 +44,21 @@
             mat-form-field
                 width 100%
                 padding 0px
+                @media mobile
+                    height 58px
+                .mat-form-field-wrapper
+                    .mat-form-field-flex
+                        @media mobile
+                            height 50px
+                        .mat-form-field-infix
+                            @media mobile
+                                height 40px
+
+
+        .boton
+            background-color #527bf14d !important
+            @media mobile
+                margin-top 10px
 .social, .boton
     display flex
     margin 5px 0
@@ -52,6 +74,8 @@
     display inline-flex
     width 90%
     margin 20px 5%
+    @media mobile 
+        height 21px
     &:after, &:before
     	width 100%
     	border-top 2px solid azul

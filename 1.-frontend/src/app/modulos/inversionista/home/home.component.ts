@@ -46,10 +46,10 @@ export class HomeComponent implements OnInit {
         this.usuario = user
         if(this.usuario.avatares.length > 0){
             this.fotoAvatar = this.usuario.avatares[0].link
+        }else{
+            MultimediaService.fotoPerfil(this.usuario.id)
+            .then(response => this.fotoAvatar = response[0].link)
         }
-       
-        MultimediaService.fotoPerfil(this.usuario.id)
-        .then(response => this.fotoPerfil = response[0].link)
         console.log(this.usuario.id)
         UsuarioService.inversionistas(this.usuario.id)
         .then(response => {

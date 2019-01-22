@@ -1,0 +1,23 @@
+.chip-container
+	.chip-content
+		mat-form-field(class="example-chip-list")
+			mat-chip-list(#chipList)
+				mat-chip.chipcito(
+					*ngFor="let item of chips",
+					[selectable]="selectable",
+					[removable]="removable",
+					(removed)="remove(item)")
+					p {{item.nombre}}
+					mat-icon(matChipRemove, *ngIf="removable") cancel
+				input(
+					placeholder="Agrega un servicio",
+					#input,
+					[formControl]="fruitCtrl",
+					[matAutocomplete]="auto",
+					[matChipInputFor]="chipList",
+					[matChipInputSeparatorKeyCodes]="separatorKeysCodes",
+					[matChipInputAddOnBlur]="addOnBlur",
+					)
+				mat-autocomplete(#auto="matAutocomplete", (optionSelected)="selected($event)")
+					mat-option(*ngFor="let item of filtered | async", [value]="item.nombre")
+						| {{item.nombre}}

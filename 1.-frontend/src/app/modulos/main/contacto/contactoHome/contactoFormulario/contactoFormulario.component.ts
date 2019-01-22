@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -7,7 +7,8 @@ import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'contactoFormulario',
   templateUrl: './contactoFormulario.component.pug',
-  styleUrls: ['./contactoFormulario.component.styl']
+  styleUrls: ['./contactoFormulario.component.styl'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ContactoformularioComponent implements OnInit {
 

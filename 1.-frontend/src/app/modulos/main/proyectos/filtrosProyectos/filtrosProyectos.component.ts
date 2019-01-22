@@ -1,11 +1,12 @@
 
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 
 
 @Component({
   selector: 'filtrosProyectos',
   templateUrl: './filtrosProyectos.component.pug',
-  styleUrls: ['./filtrosProyectos.component.styl']
+  styleUrls: ['./filtrosProyectos.component.styl'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class FiltrosproyectosComponent implements OnInit {
 

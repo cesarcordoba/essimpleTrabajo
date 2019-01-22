@@ -5,4 +5,4 @@
         rowHeight="{{height}}"
         )
         mat-grid-tile( *ngFor="let proyecto of proyectos?.items", [colspan]="colspan", [rowspan]="rowspan")
-            fichaProyectoMain([proyecto]="proyecto", (click)="mandarAProyecto(proyecto.id)")
+            fichaProyectoMain([proyecto]="proyecto")

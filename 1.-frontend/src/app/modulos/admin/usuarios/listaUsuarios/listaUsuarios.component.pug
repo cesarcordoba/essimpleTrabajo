@@ -1,10 +1,10 @@
-mat-card.lista-usuarios
+.lista-usuarios
     mat-table(mat-table, [dataSource]="usuarios.items", class="mat-elevation-z6")
         ng-container(matColumnDef="nombre")
             mat-header-cell( *matHeaderCellDef) Nombre
             mat-cell( *matCellDef="let element") {{element.nombre}}
         ng-container(matColumnDef="tipo")
-            mat-header-cell( *matHeaderCellDef) Tipo de usuario:(inverionista/contratista)
+            mat-header-cell( *matHeaderCellDef) Tipo de usuario
             mat-cell( *matCellDef="let element") {{element.tipo}}
         ng-container(matColumnDef="botones")
             mat-header-cell( *matHeaderCellDef) Botones

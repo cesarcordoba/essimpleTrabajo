@@ -11,9 +11,10 @@
                 [value]="value")
         .portada
             img(src="{{proyecto?.portadas[1]?.link}}")
-            .btn-mas
+            .btn-mas((click)="inversion()")
                 h1 +
-        .titulo
+            .capita
+        .titulo((click)="mandarAProyecto()")
             h3 {{proyecto.nombre}}
         .texto-container
             .texto-content

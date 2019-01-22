@@ -10,6 +10,7 @@ import { Usuario } from '../../modelos/Usuario.model';
 import { AuthService } from '../../servicios/auth.service';
 import { LoginComponent } from  './login/login.component'
 import { MatDialog } from '@angular/material';
+import { MultimediaService} from '../../servicios';
 
 @Component({
 	selector: 'app-main',
@@ -34,6 +35,7 @@ export class MainComponent implements OnInit, OnDestroy {
 	navLinks = [];
 	usuario: Usuario;
 	subscription: Subscription;
+	fotoAvatar: any = "assets/images/fotoPerfi.png";
 
 	constructor(private router: Router, private dialog: MatDialog, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private titleService: Title, private us: AuthService) {
 		this.mobileQuery = media.matchMedia('(max-width: 768px)');
@@ -52,7 +54,12 @@ export class MainComponent implements OnInit, OnDestroy {
 		this.us.obtenerUsuario()
 		.subscribe(user => {
 			this.usuario = user
-			console.log(this.usuario)
+			if(this.usuario.avatares.length > 0){
+				this.fotoAvatar = this.usuario.avatares[0].link
+			}else{
+				MultimediaService.fotoPerfil(this.usuario.id)
+				.then(response => this.fotoAvatar = response[0].link)
+			}
 		})
 	}
 

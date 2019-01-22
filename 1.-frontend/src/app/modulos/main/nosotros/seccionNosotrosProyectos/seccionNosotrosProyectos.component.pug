@@ -2,7 +2,7 @@
     .proyecto(*ngFor="let proyecto of proyectos")
         .imagen
             img(src="{{proyecto?.portadas[1]?.link}}")
-            .btn-mas
+            .btn-mas((click)="inversion(proyecto.id)")
                 h1 +
         .texto-container
             .titulo
@@ -13,13 +13,13 @@
                         p Meta:
                     .linea-atributo
                     .valor
-                        h4 ${{proyecto?.meta}}
+                        h4 {{proyecto?.meta | currency}}
                 .minimo
                     .atributo
                         p Minimo:
                     .linea-atributo
                     .valor
-                        h4 ${{proyecto?.minimo}}
+                        h4 {{proyecto?.minimo | currency}}
                 .plazo
                     .atributo
                         p Plazo estimado:

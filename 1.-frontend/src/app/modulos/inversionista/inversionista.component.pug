@@ -2,7 +2,8 @@ div(class="contenedor", [class.isMobile]="mobileQuery.matches")
     mat-toolbar(class="nav-toolbar mat-elevation-z8")
         button(mat-icon-button, (click)="snav.toggle()", matTooltip="Abrir menu")
             mat-icon.iconoMenu menu
-        span(class="tool-bar-spacer", style="width: 100%")
+        span(class="tool-bar-spacer")
+        h1 Inversionistas
         span(class="tool-bar-spacer")
         a(mat-button, *ngIf="usuario", [mat-menu-trigger-for]="menuUser").active
             mat-icon.btn-usuario account_circle            

@@ -8,6 +8,7 @@ import { Portada } from '../modelos/Portada.model';
 import { Multimedia } from '../modelos/Multimedia.model';
 import { Inversionista } from '../modelos/Inversionista.model';
 import { Usuario } from '../modelos/Usuario.model';
+import { Servicio } from '../modelos/Servicio.model';
 import { Contratista } from '../modelos/Contratista.model';
 const url = APILOCAL.url
 
@@ -42,5 +43,10 @@ export class ProyectoService {
     public static contratistas = id => axios.default.get( url + '/data/proyecto/Contratistas/' + id ).then(response => response.data.map(n => new Usuario( n )))
     public static ligarcontratistas = (proyecto , usuario) => axios.default.put( url + '/data/proyecto-usuario/' + proyecto + '/' + usuario )
     public static desligarcontratistas = (proyecto , usuario) => axios.default.delete( url + '/data/proyecto-usuario/' + proyecto + '/' + usuario )
+   
+    public static cantidades = id => axios.default.get( url + '/data/proyecto/Cantidades/' + id ).then(response => response.data.map(n => new Servicio( n )))
+    public static ligarcantidades = (proyecto, servicio) => axios.default.put( url + '/data/proyecto-servicio/' + proyecto + '/' + servicio )
+    public static desligarcantidades = (proyecto, servicio) => axios.default.delete( url + '/data/proyecto-servicio/' + proyecto + '/' + servicio )
+   
     //- Finalizo
 }

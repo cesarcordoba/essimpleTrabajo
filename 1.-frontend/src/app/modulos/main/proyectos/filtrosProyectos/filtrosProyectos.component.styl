@@ -2,6 +2,7 @@
 .filtros-container
     border 2px solid #00838e
     margin-top 11px
+    width 288px
     .filtros-content
         display flex
         flex-direction column
@@ -11,17 +12,33 @@
             width 100%
             h3
                 margin-left 20px
+                @media mobile
+                    margin 0px
+                    margin-left 8px
             .slider-rendimientos
                 display flex
                 flex-direction row
                 justify-content center
                 align-items center
+                @media mobile
+                    justify-content space-between
+                    padding 8px
+                .primero
+                    width 200px
         .plazo
             width 100%
             h3
                 margin-left 20px
+                @media mobile
+                    margin 0px
+                    margin-left 8px
             .slider-plazo
                 display flex
                 flex-direction row
                 justify-content center
                 align-items center
+                @media mobile
+                    justify-content space-between
+                    padding 8px
+                .segundo
+                    width 142px

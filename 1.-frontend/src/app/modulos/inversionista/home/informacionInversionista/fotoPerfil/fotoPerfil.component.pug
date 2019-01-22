@@ -1,6 +1,4 @@
 .foto-perfil-container
     .imagen-container
-        .imagen(*ngIf="!fotoAvatar")
-            img([src]="fotoPerfil")
         .imagen(*ngIf="fotoAvatar")
             img([src]="fotoAvatar")

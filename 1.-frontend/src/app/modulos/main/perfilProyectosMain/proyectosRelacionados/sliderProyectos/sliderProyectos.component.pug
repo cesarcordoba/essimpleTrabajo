@@ -3,4 +3,4 @@
         .slider(*ngIf="proyectos")
             ngx-slick.carousel(#slickModal="slick-modal",   [config]="slideConfig",  (afterChange)="afterChange($event)"  )
                 .slide(ngxSlickItem,  *ngFor="let proyecto of proyectos.items ; index as i ")
-                    fichaProyectoMain([proyecto]="proyecto", (click)="mandarAProyecto(proyecto.id)")
+                    fichaProyectoMain([proyecto]="proyecto")

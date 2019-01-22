@@ -1,7 +1,11 @@
+import { Proyecto } from './../../../../../../../2.-backend/server/http/proyecto/modelo';
 
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProyectoService } from '../../../../servicios';
+import { ProyectoService, AuthService } from '../../../../servicios';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { ConfirmDelDialogComponent } from './../../fragments/confirm-del-dialog/confirm-del-dialog.component';
+import { UsuarioService } from '../../../../servicios';
 @Component({
   selector: 'fichaProyectoMain',
   templateUrl: './fichaProyectoMain.component.pug',
@@ -17,23 +21,35 @@ export class FichaproyectomainComponent implements OnInit {
     color = 'warn';
     mode = 'determinate';
     value : any;
-
-    constructor(private _router: Router) {
+    registrado: any
+    constructor(private _router: Router, public _dialog: MatDialog, public snackBar: MatSnackBar, private us: AuthService) {
 
   }
 
-  mandarAProyecto(id){
-    this._router.navigate(['/proyecto/' + id]);
+  inversion(){
+    this._dialog.open(ConfirmDelDialogComponent, {
+      disableClose: true,
+    }).afterClosed().subscribe(result => {
+
+      if (result) {
+
+        UsuarioService.ligarinversionistas(this.registrado.id, this.proyecto.id)
+        .then(response => {console.log(response)})
+
+        this.snackBar.open("Guardado Correctamente", "cerrar", { duration: 1000 });
+      }
+    });
+
+  }
+
+  mandarAProyecto(){
+    this._router.navigate(['/proyecto/' + this.proyecto.id]);
   }
 
   ngOnInit() {
-    console.log( this.proyecto  )
+  
+      this.value = Math.round((this.proyecto.acumulado * 100) / this.proyecto.meta)
     
-    console.log(this.proyecto.acumulado)
-
-    this.value = Math.round((this.proyecto.acumulado * 100) / this.proyecto.meta)
-   
-
-
+      this.us.obtenerUsuario().subscribe(user => this.registrado = user)
   }
 }

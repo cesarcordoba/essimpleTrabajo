@@ -10,7 +10,7 @@ import { ProyectoService } from '../../../../../servicios';
 })
 export class SlidernosotrosComponent implements OnInit {
 
-    slideConfig : any
+    slideConfigNosotros : any
     control : any
     currentSlide : any;
 
@@ -24,7 +24,7 @@ export class SlidernosotrosComponent implements OnInit {
     filtro : any;
 
     constructor() {
-        this.slideConfig = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : true, 'autoplay': true, 'autoplaySpeed': 2000}
+        this.slideConfigNosotros = { "slidesToShow": 3, "slidesToScroll": 1 , "arrows" : true, 'autoplay': true, 'autoplaySpeed': 2000}
         this.currentSlide = 0
         this.filtro = {
                 pagina : 1,

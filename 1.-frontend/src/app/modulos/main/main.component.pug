@@ -19,7 +19,7 @@ main
                 div(*ngIf="usuario !== null")
                     button.avatarbutton(mat-button, [mat-menu-trigger-for]="menuUser")
                         .avatar-content
-                            .avatar([ngStyle]="{ 'background-image' :' url(' +  usuario?.avatares[0]?.link +  ')' }")
+                            .avatar([ngStyle]="{ 'background-image' :' url(' +  fotoAvatar +  ')' }")
                             span  Hola {{usuario?.nombre}}
                 mat-menu(#menuUser="matMenu")
                     a(mat-menu-item, (click)="redireccionar()")

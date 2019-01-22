@@ -1,7 +1,8 @@
 @import  '../../../defaults.styl'
 
-.contenido
-    min-height 100vh
+.tool-bar-spacer
+    flex 1 1 auto
+
     
 .contenedor
     display: flex;
@@ -19,6 +20,25 @@
     .nav-toolbar
         margin: 0% auto
         text-align: center;
+.isMobile
+    .nav-toolbar
+        position: fixed;
+        /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+        z-index: 2;
+    .sidenav-container
+        flex: 1 0 auto
+.mat-drawer-content .mat-sidenav-content
+    margin: 10px
+
+.sidenav-container
+    flex: 1;
+    
+
+.mat-nav-list .active-nav
+    color: #000000;
+
+.mat-drawer-container
+    background-color: rgba(255,255,255, 0.1)
 
 .mat-toolbar 
     background-image linear-gradient(to right, #003B94 , #009A8C) !important

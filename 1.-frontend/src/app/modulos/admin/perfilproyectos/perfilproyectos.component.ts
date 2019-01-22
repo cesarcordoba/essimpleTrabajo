@@ -32,6 +32,7 @@ export class PerfilproyectosComponent implements OnInit {
         .then(response => {
 
             console.log(this.proyecto)
+            console.log(this.proyecto.id)
             // this.pasarProyecto.next(response);
 
             this.titleService.setTitle( this.proyecto.nombre );

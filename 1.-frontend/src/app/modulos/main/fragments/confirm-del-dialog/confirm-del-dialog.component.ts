@@ -17,7 +17,7 @@ export class ConfirmDelDialogComponent implements OnInit {
   ngOnInit() {
 
 		this.us.obtenerUsuario().subscribe(user => {
-        if(user){
+        if(user.tipo !== "contratista"){
           this.usuario = true
         }else{
           this.usuario = false

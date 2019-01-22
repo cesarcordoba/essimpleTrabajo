@@ -123,7 +123,7 @@ export class Proyecto extends Model<Proyecto> {
     Contratistas : Usuario[];
 
     @BelongsToMany(()=> Servicio, () => Cantidad,'IdProyecto', 'IdServicio')
-    Servicios : Servicio[];
+    Cantidades : Servicio[];
             
 
     constructor(values?: any, options?: any) {

@@ -1,6 +1,9 @@
 import { ProyectoService } from './../../../../servicios/Proyecto.service';
-
+import { ConfirmDelDialogComponent } from './../../fragments/confirm-del-dialog/confirm-del-dialog.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { AuthService } from './../../../../servicios/auth.service';
+import { UsuarioService } from '../../../../servicios';
 
 @Component({
   selector: 'seccionNosotrosProyectos',
@@ -13,7 +16,24 @@ export class SeccionnosotrosproyectosComponent implements OnInit {
 
     proyectos = [];
     items: any;
-    constructor() {
+    registrado: any
+    constructor(public _dialog: MatDialog, public snackBar: MatSnackBar, private us: AuthService) {
+
+  }
+  inversion(idProyecto){
+    console.log(idProyecto)
+    this._dialog.open(ConfirmDelDialogComponent, {
+      disableClose: true,
+    }).afterClosed().subscribe(result => {
+
+      if (result) {
+
+        UsuarioService.ligarinversionistas(this.registrado.id, idProyecto)
+        .then(response => {console.log(response)})
+
+        this.snackBar.open("Guardado Correctamente", "cerrar", { duration: 1000 });
+      }
+    });
 
   }
 
@@ -23,6 +43,7 @@ export class SeccionnosotrosproyectosComponent implements OnInit {
     .then(response => this.items = response)
     .then(cambiar => this.obtenerRandoms(2, this.items))
 
+    this.us.obtenerUsuario().subscribe(user => this.registrado = user)
     
   }
 

@@ -19,6 +19,7 @@ import { GridimgproyectosComponent } from './imagenesproyectos/gridimgproyectos/
 import { DropifyproyectoComponent } from './imagenesproyectos/gridimgproyectos/dropifyproyecto/dropifyproyecto.component';
 import { UsauriosproyectoComponent } from './usauriosproyecto/usauriosproyecto.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { ChipserviciosComponent } from './chipServicios/chipServicios.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
         GridimgproyectosComponent,
         DropifyproyectoComponent,
         UsauriosproyectoComponent,
+        ChipserviciosComponent
     ],
     exports: []
 })

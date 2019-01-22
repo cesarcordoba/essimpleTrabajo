@@ -4,8 +4,6 @@
     width 290px
     &:focus
         outline 0px
-    &:hover
-        cursor pointer
     .proyecto
         position relative
         .circulo-porcentaje
@@ -20,7 +18,7 @@
             justify-content center
             align-items center
             background-color #fff
-            z-index 10
+            z-index 30
             p
                 font-size 15px
                 margin 0
@@ -54,43 +52,72 @@
                 height 100%
             .btn-mas
                 opacity 0
+                position absolute
+                right 0
+                top 0
+                left 0
+                margin auto
+                bottom 0
+                height 55px
+                width 56px
+                display flex
+                justify-content center
+                align-items center
+                background-image linear-gradient(to right, #003B94 , #009A8C)
+                cursor pointer
+                @media mobile
+                    height 50px
+                    width 50px
+                @media tablet
+                    height 50px
+                    width 50px
+                &:focus
+                    outline 0px
+                h1
+                    color white
+                    margin 0
+                    font-size 33px
+                transition(300ms, 0)
+            .capita
+                position absolute
+                right 0
+                top 0
+                left 0
+                margin auto
+                bottom 0
+                width 100%
+                height 100%
+                background-color black
+                opacity 0
+                transition(300ms, 0)
             &:hover
+                cursor pointer
+                .capita
+                    opacity 0.4
+                    transition(300ms, 0)
+                    z-index 10
                 .btn-mas
+                    z-index 20
                     opacity 1
-                    position absolute
-                    right 0
-                    top 0
-                    left 0
-                    margin auto
-                    bottom 0
-                    height 55px
-                    width 56px
-                    display flex
-                    justify-content center
-                    align-items center
-                    background-image linear-gradient(to right, #003B94 , #009A8C)
-                    cursor pointer
-                    @media mobile
-                        height 50px
-                        width 50px
-                    @media tablet
-                        height 50px
-                        width 50px
-                    &:focus
-                        outline 0px
-                    h1
-                        color white
-                        margin 0
-                        font-size 33px
+                    transition(300ms, 0)
         .titulo
             display flex
             height 50px
             justify-content center
             align-items center
             background-color rgba(220,220,220,0.4)
+            cursor pointer
+            &:focus
+                outline 0px
             h3
                 font-size 15px
                 margin 0
+                transition(250ms, 0)
+            &:hover
+                h3
+                    transition(250ms, 0)
+                    transform scale(1.3)
+                
         .texto-container
             padding 20px
             .texto-content

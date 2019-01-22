@@ -39,7 +39,7 @@ export class InformacionproyectoComponent implements OnInit {
         UsuarioService.ligarinversionistas(this.registrado.id, this.proyecto.id)
         .then(response => console.log(response))
 
-        //-this.snackBar.open("Guardado Correctamente", "cerrar", { duration: 1000 });
+        this.snackBar.open("Guardado Correctamente", "cerrar", { duration: 1000 });
       }
     });
 
