@@ -124,6 +124,22 @@ class UsuarioController {
             .then(item => item.$remove('Contratistas', req.params.proyecto))
             .then(result => res.status(200).jsonp(result))
             .catch(err => errorHandler(err, 'desligarUsuarioContratistas'));
+        this.obtenersinAdmin = (req, res, next) => {
+            console.log("**************");
+            console.log("estas aqui papu");
+            console.log("**************");
+            modelo_1.Usuario.findAll()
+                .then(response => {
+                var nuevo = [];
+                response.forEach(n => {
+                    if (n.tipo !== "admin") {
+                        nuevo.push(n);
+                    }
+                });
+                res.status(200).jsonp(nuevo);
+            })
+                .catch(err => errorHandler(err, 'buscarUsuario'));
+        };
     }
 }
 exports.UsuarioController = UsuarioController;

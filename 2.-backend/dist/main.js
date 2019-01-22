@@ -28,6 +28,8 @@ const ruta_10 = require("./http/llave/ruta");
 const ruta_11 = require("./http/avatar/ruta");
 const ruta_12 = require("./http/log/ruta");
 const ruta_13 = require("./http/subscripcion/ruta");
+const ruta_14 = require("./http/servicio/ruta");
+const ruta_15 = require("./http/cantidad/ruta");
 const modelo_1 = require("./http/proyecto/modelo");
 const modelo_2 = require("./http/contacto/modelo");
 const modelo_3 = require("./http/multimedia/modelo");
@@ -41,6 +43,8 @@ const modelo_10 = require("./http/llave/modelo");
 const modelo_11 = require("./http/avatar/modelo");
 const modelo_12 = require("./http/log/modelo");
 const modelo_13 = require("./http/subscripcion/modelo");
+const modelo_14 = require("./http/servicio/modelo");
+const modelo_15 = require("./http/cantidad/modelo");
 class Server {
     constructor(port, modo, urlAllowOrigin) {
         this.port = port;
@@ -73,6 +77,8 @@ class Server {
             modelo_11.Avatar,
             modelo_12.Log,
             modelo_13.Subscripcion,
+            modelo_14.Servicio,
+            modelo_15.Cantidad
         ]);
         conexion.sync();
         this.app.use((req, res, next) => {
@@ -108,6 +114,8 @@ class Server {
             new ruta_11.AvatarRouter().rutas(),
             new ruta_12.LogRouter().rutas(),
             new ruta_13.SubscripcionRouter().rutas(),
+            new ruta_14.ServicioRouter().rutas(),
+            new ruta_15.CantidadRouter().rutas(),
             // new UsuarioRouter().rutas(),
             new Autentificacion_1.AutentificacionRouter().rutas(),
         ]);

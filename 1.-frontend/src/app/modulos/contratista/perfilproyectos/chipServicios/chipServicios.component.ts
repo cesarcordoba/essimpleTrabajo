@@ -5,9 +5,7 @@ import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete } from '@angular/material';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
 import { ServicioService, ProyectoService } from '../../../../servicios';
-import { Servicio } from 'src/app/modelos';
 import { ActivatedRoute } from '@angular/router';
 
 

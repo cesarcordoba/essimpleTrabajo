@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
-
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +30,10 @@ import { SocialGuard } from './guards/social.guard';
 		// InversionistaModule,
 		// ContratistaModule,
 		// MainModule,
-		FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
+		FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+		AgmCoreModule.forRoot({
+			apiKey: 'AIzaSyBkJIFAKfxRa3PnUU8mxEvm38x_FMptCIo'
+		  })
 		// ServiciosModule.forRoot(APILOCAL.url),
 	],
 	providers: [

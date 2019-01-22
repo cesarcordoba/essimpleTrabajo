@@ -97,6 +97,21 @@ class ProyectoController {
             .then(item => item.$remove('Contratistas', req.params.usuario))
             .then(result => res.status(200).jsonp(result))
             .catch(err => errorHandler(err, 'desligarProyectoContratistas'));
+        //* 5
+        this.cantidades = (req, res, next) => modelo_1.Proyecto.findById(req.params.id)
+            .then(item => item.$get('Cantidades'))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'ProyectoCantidades'));
+        //* 5
+        this.ligarcantidades = (req, res, next) => modelo_1.Proyecto.findById(req.params.proyecto)
+            .then(item => item.$add('Cantidades', req.params.servicio))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'ligarProyectoCantidades'));
+        //* 5
+        this.desligarcantidades = (req, res, next) => modelo_1.Proyecto.findById(req.params.proyecto)
+            .then(item => item.$remove('Cantidades', req.params.servicio))
+            .then(result => res.status(200).jsonp(result))
+            .catch(err => errorHandler(err, 'desligarProyectoCantidades'));
         this.froala = (req, res, next) => {
             var configs = {
                 bucket: 'colnal-imagenes',

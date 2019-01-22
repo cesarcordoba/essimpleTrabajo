@@ -15,6 +15,8 @@ const modelo_2 = require("../multimedia/modelo");
 const modelo_3 = require("../inversionista/modelo");
 const modelo_4 = require("../usuario/modelo");
 const modelo_5 = require("../contratista/modelo");
+const modelo_6 = require("../cantidad/modelo");
+const modelo_7 = require("../servicio/modelo");
 let Proyecto = class Proyecto extends sequelize_typescript_1.Model {
     constructor(values, options) {
         super(values, options);
@@ -89,6 +91,14 @@ __decorate([
     __metadata("design:type", void 0)
 ], Proyecto.prototype, "status", void 0);
 __decorate([
+    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.STRING),
+    __metadata("design:type", void 0)
+], Proyecto.prototype, "longitud", void 0);
+__decorate([
+    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.STRING),
+    __metadata("design:type", void 0)
+], Proyecto.prototype, "latitud", void 0);
+__decorate([
     sequelize_typescript_1.HasMany(() => modelo_1.Portada, 'IdProyecto'),
     __metadata("design:type", Array)
 ], Proyecto.prototype, "Portadas", void 0);
@@ -104,6 +114,10 @@ __decorate([
     sequelize_typescript_1.BelongsToMany(() => modelo_4.Usuario, () => modelo_5.Contratista, 'IdProyecto', 'IdUsuario'),
     __metadata("design:type", Array)
 ], Proyecto.prototype, "Contratistas", void 0);
+__decorate([
+    sequelize_typescript_1.BelongsToMany(() => modelo_7.Servicio, () => modelo_6.Cantidad, 'IdProyecto', 'IdServicio'),
+    __metadata("design:type", Array)
+], Proyecto.prototype, "Cantidades", void 0);
 Proyecto = __decorate([
     sequelize_typescript_1.Table({
         timestamps: true,

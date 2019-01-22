@@ -7,6 +7,7 @@ import { MaterialModule } from '../../../extras/material.module';
 import { SlickModule } from 'ngx-slick';
 import { Ng2ImgMaxModule } from 'ng2-img-max'; 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AgmCoreModule } from '@agm/core';
 
 
 import { PerfilproyectosmainComponent } from './perfilProyectosMain.component';
@@ -27,6 +28,7 @@ import { FichaproyectomainModule } from './../compartidos/fichaProyectoMain/fich
         FormsModule,
         ReactiveFormsModule,
         Ng2ImgMaxModule,
+        AgmCoreModule,
 
         FichaproyectomainModule, ],
     declarations: [

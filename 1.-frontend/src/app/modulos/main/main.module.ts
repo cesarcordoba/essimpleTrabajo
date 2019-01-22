@@ -27,6 +27,7 @@ import { ContactoModule } from './contacto/contacto.module';
 import { ProyectosModule } from './proyectos/proyectos.module';
 
 import { PerfilproyectosmainModule } from './perfilProyectosMain/perfilProyectosMain.module';
+import { AgmCoreModule } from '@agm/core';
 
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -51,7 +52,8 @@ import { ConfirmDelDialogComponent } from './fragments/confirm-del-dialog/confir
         PreguntasModule,
         ContactoModule,
         ProyectosModule,
-        PerfilproyectosmainModule,
+		PerfilproyectosmainModule,
+		AgmCoreModule
 	],
 	declarations: [
 		MainComponent,
@@ -59,7 +61,7 @@ import { ConfirmDelDialogComponent } from './fragments/confirm-del-dialog/confir
 		RegistroComponent,
 		PrivacidadComponent,
 		TerminosComponent,
-		SocialComponent,
+		//-SocialComponent,
 		ConfirmDelDialogComponent
 	],
 	entryComponents : [

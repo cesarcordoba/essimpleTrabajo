@@ -10,9 +10,15 @@
                         h1 Características
                     .texto
                         .algo([innerHtml] = "proyecto.contenido")
+                        .servicios-container
+                            h4 Servicios:
+                            .servicios-content(*ngFor="let servicio of servicios")
+                                p *{{servicio.nombre}}
                 .mapa-ubicacion
                     .mapa
-                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29877.634983562795!2d-100.3955254120336!3d20.60012700348012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x44b577c54d63c101!2sTryadd%2C+S.A.+de+C.V.!5e0!3m2!1ses!2smx!4v1543436191701" height="350" frameborder="0" style="border:0" allowfullscreen)
+                        agm-map([latitude]='lat', [longitude]='lng')
+                            agm-marker([latitude]='lat', [longitude]='lng')
+                        //-iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29877.634983562795!2d-100.3955254120336!3d20.60012700348012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x44b577c54d63c101!2sTryadd%2C+S.A.+de+C.V.!5e0!3m2!1ses!2smx!4v1543436191701" height="350" frameborder="0" style="border:0" allowfullscreen)
                     .usuario
                         .creador-container
                             .creador-titulo

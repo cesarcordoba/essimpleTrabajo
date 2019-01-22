@@ -66,6 +66,18 @@
                             margin 0
                             text-align justify
                             text-transform lowercase
+                        .servicios-container
+                            h4
+                                font-size 16px
+                                margin 0
+                                margin-bottom 10px
+                            .servicios-content
+                                display flex
+                                flex-direction row
+                                align-items center
+                                p
+                                    margin 0
+                                    font-size 14px
                 .mapa-ubicacion
                     margin-top 20px
                     display flex
@@ -75,7 +87,9 @@
                     @media mobile 
                         flex-direction column
                     .mapa
-                        height 350px
+                        agm-map 
+                            height 350px
+                        //-height 350px
                         width 411px
                         @media tablet
                             width 50%

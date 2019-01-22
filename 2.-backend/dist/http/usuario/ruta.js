@@ -9,6 +9,8 @@ class UsuarioRouter {
         this.init();
     }
     init() {
+        this._rutas.route('/data/usuario/obtenersinAdmin')
+            .get(this.controlador.obtenersinAdmin);
         //*
         this._rutas.route('/data/usuario')
             .get(this.controlador.buscar)
