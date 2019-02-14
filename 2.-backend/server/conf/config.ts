@@ -94,7 +94,7 @@ class Config {
 		
 		this._token_secreto = 'zukulenciamaspro';
 
-		this._app = {port: 5000}
+		this._app = {port: 5003}
 
 		this._db = { host: '35.232.156.254', port: 3306, database: 'esimple', username: 'esSimple', password: '#1q2w3e4r', dialec: 'mysql' }
 		//-mysql://b3c714d746612b:98f8c0f6@us-cdbr-iron-east-01.cleardb.net/heroku_36f0b6cec16010f?reconnect=true
