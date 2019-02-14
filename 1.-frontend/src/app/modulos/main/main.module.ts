@@ -61,7 +61,7 @@ import { ConfirmDelDialogComponent } from './fragments/confirm-del-dialog/confir
 		RegistroComponent,
 		PrivacidadComponent,
 		TerminosComponent,
-		//-SocialComponent,
+		SocialComponent,
 		ConfirmDelDialogComponent
 	],
 	entryComponents : [

@@ -60,7 +60,7 @@ class Config {
 
 		this._app = { port: 5000 }
 
-		this._db = { host: '127.0.0.1', port: 3306, database: 'esimple', username: 'root', password: '1234', dialec: 'mysql' }
+		this._db = { host: '35.238.229.92', port: 3306, database: 'essimple', username: 'cesar', password: '1234', dialec: 'mysql' }
 		//-this._db = { host: '35.232.156.254', port: 3306, database: 'esimple', username: 'esSimple', password: '#1q2w3e4r', dialec: 'mysql' }
 
 		this._keys = {
@@ -96,7 +96,7 @@ class Config {
 
 		this._app = {port: 5003}
 
-		this._db = { host: '35.232.156.254', port: 3306, database: 'esimple', username: 'esSimple', password: '#1q2w3e4r', dialec: 'mysql' }
+		this._db = { host: '35.238.229.92', port: 3306, database: 'essimple', username: 'cesar', password: '1234', dialec: 'mysql' }
 		//-mysql://b3c714d746612b:98f8c0f6@us-cdbr-iron-east-01.cleardb.net/heroku_36f0b6cec16010f?reconnect=true
 		this._keys = {
 			facebook: {

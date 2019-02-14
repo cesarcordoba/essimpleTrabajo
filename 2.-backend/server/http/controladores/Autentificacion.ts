@@ -134,8 +134,8 @@ export class AutentificacionController {
 
 	tokenSocial = (req, res, next) => Usuario.findOne({ where: { 'correo': req.user.correo } })
 		.then(usering => jwt.sign({ user: usering }, config.token_secreto, { expiresIn: '1h' }))
-		.then(token => res.redirect('https://www.essimple.mx/social/' + token))
-		//.then(token => res.redirect('http://localhost:4200/social/' + token))
+		//-.then(token => res.redirect('https://www.essimple.mx/social/' + token))
+		.then(token => res.redirect('http://localhost:4200/social/' + token))
 	avatar = (req, res, next) => Usuario.findById(req.params.id, { include: [Llave] })
 		.then(user => res.status(200).json(user))
 
