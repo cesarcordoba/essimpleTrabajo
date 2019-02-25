@@ -53,8 +53,8 @@ class AutentificacionController {
         })(req, res, next);
         this.tokenSocial = (req, res, next) => modelo_3.Usuario.findOne({ where: { 'correo': req.user.correo } })
             .then(usering => jwt.sign({ user: usering }, config_1.config.token_secreto, { expiresIn: '1h' }))
-            .then(token => res.redirect('https://www.essimple.mx/social/' + token));
-        //.then(token => res.redirect('http://localhost:4200/social/' + token))
+            //-.then(token => res.redirect('https://www.essimple.mx/social/' + token))
+            .then(token => res.redirect('http://localhost:4200/social/' + token));
         this.avatar = (req, res, next) => modelo_3.Usuario.findById(req.params.id, { include: [modelo_2.Llave] })
             .then(user => res.status(200).json(user));
         this.facebook = (req, res, next) => passport.authenticate('facebook', { scope: ['email'] })(req, res, next);

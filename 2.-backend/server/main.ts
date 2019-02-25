@@ -71,7 +71,7 @@ export class Server {
     }
 
     iniciarServidor(callback?: Function) {
-        this.app.listen(process.env.PORT || 5000, callback);
+        this.app.listen(this.port, callback);
     }
 
     private config() {

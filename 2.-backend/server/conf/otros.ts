@@ -1,6 +1,6 @@
 
 export interface App {
-	port: number;
+	port: any;
 }
 
 export interface DB {

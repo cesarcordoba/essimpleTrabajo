@@ -59,7 +59,7 @@ class Server {
         return new Server(port, modo, urlAllowOrigin);
     }
     iniciarServidor(callback) {
-        this.app.listen(process.env.PORT || 5000, callback);
+        this.app.listen(this.port, callback);
     }
     config() {
         let conexion = new conexion_1.Conexion();
