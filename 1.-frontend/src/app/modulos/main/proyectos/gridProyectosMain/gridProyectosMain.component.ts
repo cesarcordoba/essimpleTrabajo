@@ -72,7 +72,7 @@ export class GridproyectosmainComponent implements OnInit, OnDestroy {
       this.columnas = 2
     }else if(($(window).width() > 768) && ($(window).width() < 99)){
       this.columnas = 2
-    }else if($(window).widt() < 768){
+    }else if($(window).width() < 768){
       this.columnas = 1
     }
 
